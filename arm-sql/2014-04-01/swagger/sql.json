@@ -57,10 +57,16 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DatabaseAuditingPolicy"
+            }
           },
           "201": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DatabaseAuditingPolicy"
+            }
           }
         }
       },
@@ -133,10 +139,16 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ServerAuditingPolicy"
+            }
           },
           "201": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ServerAuditingPolicy"
+            }
           }
         }
       },
@@ -209,10 +221,16 @@
         ],
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DataMaskingPolicy"
+            }
           },
           "200": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DataMaskingPolicy"
+            }
           }
         }
       },
@@ -299,10 +317,16 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DataMaskingRule"
+            }
           },
           "201": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DataMaskingRule"
+            }
           }
         }
       },
@@ -421,10 +445,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/ErrorResult"
-            }
+            "description": ""
           },
           "202": {
             "description": ""
@@ -466,10 +487,7 @@
             "description": ""
           },
           "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/ErrorResult"
-            }
+            "description": ""
           }
         },
         "x-ms-long-running-operation": true
@@ -560,13 +578,13 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ErrorResult"
+              "$ref": "#/definitions/Database"
             }
           },
           "201": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ErrorResult"
+              "$ref": "#/definitions/Database"
             }
           }
         },
@@ -772,13 +790,13 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ErrorResult"
+              "$ref": "#/definitions/ElasticPool"
             }
           },
           "201": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ErrorResult"
+              "$ref": "#/definitions/ElasticPool"
             }
           }
         },
@@ -1565,7 +1583,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ErrorResult"
+              "$ref": "#/definitions/RecommendedIndex"
             }
           }
         }
@@ -1831,10 +1849,16 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DatabaseSecureConnectionPolicy"
+            }
           },
           "201": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DatabaseSecureConnectionPolicy"
+            }
           }
         }
       },
@@ -1916,13 +1940,13 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ErrorResult"
+              "$ref": "#/definitions/ServerAdministrator"
             }
           },
           "201": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/ErrorResult"
+              "$ref": "#/definitions/ServerAdministrator"
             }
           },
           "202": {
@@ -1963,16 +1987,10 @@
             "description": ""
           },
           "204": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/ErrorResult"
-            }
+            "description": ""
           },
           "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/ErrorResult"
-            }
+            "description": ""
           }
         },
         "x-ms-long-running-operation": true
