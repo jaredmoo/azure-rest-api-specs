@@ -27,13 +27,6 @@
         "description": "Creates or updates an Azure SQL Database auditing policy.",
         "parameters": [
           {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
-          {
             "name": "serverName",
             "in": "path",
             "required": true,
@@ -61,6 +54,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -80,13 +76,6 @@
         "description": "Returns an Azure SQL Database auditing policy.",
         "parameters": [
           {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
-          {
             "name": "serverName",
             "in": "path",
             "required": true,
@@ -105,6 +94,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -126,13 +118,6 @@
         "description": "Creates or updates an Azure SQL Database Server auditing policy.",
         "parameters": [
           {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
-          {
             "name": "serverName",
             "in": "path",
             "required": true,
@@ -153,6 +138,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -172,13 +160,6 @@
         "description": "Returns an Azure SQL Database server auditing policy.",
         "parameters": [
           {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
-          {
             "name": "serverName",
             "in": "path",
             "required": true,
@@ -190,6 +171,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -210,13 +194,6 @@
         "operationId": "DataMasking_CreateOrUpdatePolicy",
         "description": "Creates or updates an Azure SQL Database data masking policy",
         "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
           {
             "name": "serverName",
             "in": "path",
@@ -245,6 +222,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -264,13 +244,6 @@
         "description": "Returns an Azure SQL Database data masking policy.",
         "parameters": [
           {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
-          {
             "name": "serverName",
             "in": "path",
             "required": true,
@@ -289,6 +262,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -309,13 +285,6 @@
         "operationId": "DataMasking_CreateOrUpdateRule",
         "description": "Creates or updates an Azure SQL Database Server Firewall rule.",
         "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
           {
             "name": "serverName",
             "in": "path",
@@ -351,6 +320,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -369,13 +341,6 @@
         "operationId": "DataMasking_Delete",
         "description": "Deletes an Azure SQL Server data masking rule.",
         "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
           {
             "name": "serverName",
             "in": "path",
@@ -402,6 +367,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -423,13 +391,6 @@
         "description": "Returns a list of Azure SQL Database data masking rules.",
         "parameters": [
           {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
-          {
             "name": "serverName",
             "in": "path",
             "required": true,
@@ -448,6 +409,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -472,13 +436,6 @@
         "description": "Start an Azure SQL Data Warehouse database pause operation.To determine the status of the operation call GetDatabaseActivationOperationStatus.",
         "parameters": [
           {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Server belongs."
-          },
-          {
             "name": "serverName",
             "in": "path",
             "required": true,
@@ -497,6 +454,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -522,13 +482,6 @@
         "description": "Start an Azure SQL Data Warehouse database resume operation. To determine the status of the operation call GetDatabaseActivationOperationStatus.",
         "parameters": [
           {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Server belongs."
-          },
-          {
             "name": "serverName",
             "in": "path",
             "required": true,
@@ -547,6 +500,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -572,13 +528,6 @@
         "description": "Returns a list of Azure SQL Database restore points.",
         "parameters": [
           {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
-          {
             "name": "serverName",
             "in": "path",
             "required": true,
@@ -597,6 +546,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -620,13 +572,6 @@
         "operationId": "Databases_CreateOrUpdate",
         "description": "Begins creating a new Azure SQL Database or updating an existing Azure SQL Database. To determine the status of the operation call GetDatabaseOperationStatus.",
         "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Database Server belongs."
-          },
           {
             "name": "serverName",
             "in": "path",
@@ -655,6 +600,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -684,13 +632,6 @@
         "description": "Deletes the Azure SQL Database with the given name.",
         "parameters": [
           {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Database Server belongs."
-          },
-          {
             "name": "serverName",
             "in": "path",
             "required": true,
@@ -709,6 +650,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -728,13 +672,6 @@
         "description": "Returns information about an Azure SQL Database.",
         "parameters": [
           {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
-          {
             "name": "serverName",
             "in": "path",
             "required": true,
@@ -753,6 +690,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -772,14 +712,7 @@
         ],
         "operationId": "Databases_GetById",
         "description": "Returns information about an Azure SQL Database.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -799,6 +732,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -822,14 +758,7 @@
         ],
         "operationId": "Databases_ListUsages",
         "description": "Returns information about Azure SQL Database usages.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -849,6 +778,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -871,14 +803,7 @@
         ],
         "operationId": "ElasticPools_CreateOrUpdate",
         "description": "Begins creating a new Azure SQL Database Elastic Pool or updating an existing Azure SQL Database Elastic Pool. To determine the status of the operation call GetElasticPoolOperationStatus.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Database Server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -907,6 +832,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -934,14 +862,7 @@
         ],
         "operationId": "ElasticPools_Delete",
         "description": "Deletes the Azure SQL Database Elastic Pool with the given name.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Database Server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -961,6 +882,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -978,14 +902,7 @@
         ],
         "operationId": "ElasticPools_Get",
         "description": "Returns information about an Azure SQL Database Elastic Pool.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Database Server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1005,6 +922,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1024,14 +944,7 @@
         ],
         "operationId": "ElasticPools_GetDatabases",
         "description": "Returns information about an Azure SQL Database inside of an Azure Sql Database Elastic Pool.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1058,6 +971,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1077,14 +993,7 @@
         ],
         "operationId": "ElasticPools_List",
         "description": "Returns information about Azure SQL Database Elastic Pools.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Database Serve belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1097,6 +1006,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1119,14 +1031,7 @@
         ],
         "operationId": "ElasticPools_ListActivity",
         "description": "Returns information about Azure SQL Database Elastic Pool Activity.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Database Serve belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1146,6 +1051,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1168,14 +1076,7 @@
         ],
         "operationId": "ElasticPools_ListDatabaseActivity",
         "description": "Returns information about activity on Azure SQL Databases inside of an Azure Sql Database Elastic Pool.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1195,6 +1096,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1217,14 +1121,7 @@
         ],
         "operationId": "ElasticPools_ListDatabases",
         "description": "Returns information about an Azure SQL Database inside of an Azure Sql Database Elastic Pool.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1244,6 +1141,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1266,14 +1166,7 @@
         ],
         "operationId": "FirewallRules_CreateOrUpdate",
         "description": "Creates or updates an Azure SQL Database Server Firewall rule.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1302,6 +1195,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1325,14 +1221,7 @@
         ],
         "operationId": "FirewallRules_Delete",
         "description": "Deletes an Azure SQL Database Server Firewall rule.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1352,6 +1241,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1369,14 +1261,7 @@
         ],
         "operationId": "FirewallRules_Get",
         "description": "Returns an Azure SQL Database Server Firewall rule.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1396,6 +1281,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1415,14 +1303,7 @@
         ],
         "operationId": "FirewallRules_List",
         "description": "Returns a list of Azure SQL Database Server Firewall rules.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1435,6 +1316,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1489,14 +1373,7 @@
         ],
         "operationId": "RecommendedElasticPools_Get",
         "description": "Returns information about an Azure SQL Recommended Elastic Pool.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Recommended Server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1516,6 +1393,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1535,14 +1415,7 @@
         ],
         "operationId": "RecommendedElasticPools_GetDatabases",
         "description": "Returns information about an Azure SQL Database inside of an Azure Sql Recommended Elastic Pool.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1569,6 +1442,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1588,14 +1464,7 @@
         ],
         "operationId": "RecommendedElasticPools_List",
         "description": "Returns information about Azure SQL Recommended Elastic Pools.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Recommended Serve belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1608,6 +1477,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1630,14 +1502,7 @@
         ],
         "operationId": "RecommendedElasticPools_ListDatabases",
         "description": "Returns information about an Azure SQL Database inside of an Azure Sql Recommended Elastic Pool.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1679,14 +1544,7 @@
         ],
         "operationId": "RecommendedElasticPools_ListMetrics",
         "description": "Returns information about an recommended elastic pool metrics.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1706,6 +1564,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1728,14 +1589,7 @@
         ],
         "operationId": "RecommendedIndexes_Get",
         "description": "Returns details on recommended index.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1776,6 +1630,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1793,14 +1650,7 @@
         ],
         "operationId": "RecommendedIndexes_Update",
         "description": "We execute or cancel index operations by updating index state. Allowed state transitions are :Active          -> Pending          - Start index creation processPending         -> Active           - Cancel index creationActive/Pending  -> Ignored          - Ignore index recommendation so it will no longer show in active recommendationsIgnored         -> Active           - Restore index recommendationSuccess         -> Pending Revert   - Revert index that has been createdPending Revert  -> Revert Canceled  - Cancel index revert operation",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Database Server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1850,6 +1700,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1869,14 +1722,7 @@
         ],
         "operationId": "DatabaseReplicationLinks_Delete",
         "description": "Deletes the Azure SQL Database Replication Link with the given id.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1903,6 +1749,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1920,14 +1769,7 @@
         ],
         "operationId": "DatabaseReplicationLinks_Get",
         "description": "Returns information about an Azure SQL Database Replication Link.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -1954,6 +1796,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -1973,14 +1818,7 @@
         ],
         "operationId": "DatabaseReplicationLinks_Failover",
         "description": "Begins failover of the Azure SQL Database Replication Link with the given id.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2007,6 +1845,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2027,14 +1868,7 @@
         ],
         "operationId": "DatabaseReplicationLinks_FailoverAllowDataLoss",
         "description": "Begins a forced failover of the Azure SQL Database Replication Link with the given id which may result in data loss.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the Azure SQL Server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2061,6 +1895,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2081,14 +1918,7 @@
         ],
         "operationId": "DatabaseReplicationLinks_List",
         "description": "Returns information about Azure SQL Database Replication Links.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2108,6 +1938,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2130,14 +1963,7 @@
         ],
         "operationId": "SecureConnection_CreateOrUpdateDatabasePolicy",
         "description": "Creates or updates an Azure SQL Database Server Firewall rule.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2166,6 +1992,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2183,14 +2012,7 @@
         ],
         "operationId": "SecureConnection_GetDatabasePolicy",
         "description": "Returns an Azure SQL Database secure connection policy.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2210,6 +2032,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2229,14 +2054,7 @@
         ],
         "operationId": "ServerAdministrators_CreateOrUpdate",
         "description": "Begins creating a new Azure SQL Server Active Directory Administrator or updating an existing Azure SQL Server Active Directory Administrator. To determine the status of the operation call GetServerAdministratorOperationStatus.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2265,6 +2083,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2292,14 +2113,7 @@
         ],
         "operationId": "ServerAdministrators_Delete",
         "description": "Begins deleting an existing Azure SQL Server Active Directory Administrator.To determine the status of the operation call GetServerAdministratorDeleteOperationStatus.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2319,6 +2133,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2346,14 +2163,7 @@
         ],
         "operationId": "ServerAdministrators_Get",
         "description": "Returns an Azure SQL Server Administrator.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2373,6 +2183,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2392,14 +2205,7 @@
         ],
         "operationId": "ServerAdministrators_List",
         "description": "Returns a list of Azure SQL Server Administrators.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2412,6 +2218,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2434,14 +2243,7 @@
         ],
         "operationId": "Servers_CreateOrUpdate",
         "description": "Creates a new Azure SQL Database server.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2463,6 +2265,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2486,14 +2291,7 @@
         ],
         "operationId": "Servers_Delete",
         "description": "Returns information about an Azure SQL Database Server.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2506,6 +2304,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2523,14 +2324,7 @@
         ],
         "operationId": "Servers_Get",
         "description": "Returns information about an Azure SQL Database Server.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2543,6 +2337,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2562,19 +2359,15 @@
         ],
         "operationId": "Servers_List",
         "description": "Returns information about an Azure SQL Database Server.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2597,14 +2390,7 @@
         ],
         "operationId": "Servers_ListUsages",
         "description": "Returns information about Azure SQL Database Server usage.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2617,6 +2403,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2639,14 +2428,7 @@
         ],
         "operationId": "ServerUpgrades_Cancel",
         "description": "Cancel a pending upgrade for the Azure SQL Database server.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2659,6 +2441,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2673,14 +2458,7 @@
         ],
         "operationId": "ServerUpgrades_Get",
         "description": "Returns information about Upgrade status of an Azure SQL Database Server.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2693,6 +2471,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2715,14 +2496,7 @@
         ],
         "operationId": "ServerUpgrades_Start",
         "description": "Start an Azure SQL Database Server Upgrade.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2744,6 +2518,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2760,14 +2537,7 @@
         ],
         "operationId": "ServiceTierAdvisors_Get",
         "description": "Returns information about a service tier advisor.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2794,6 +2564,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2813,14 +2586,7 @@
         ],
         "operationId": "ServiceTierAdvisors_List",
         "description": "Returns information about service tier advisors for specified database.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2840,6 +2606,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2862,14 +2631,7 @@
         ],
         "operationId": "ServiceObjectives_Get",
         "description": "Returns information about an Azure SQL Database Server Service Objectives.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2889,6 +2651,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2908,14 +2673,7 @@
         ],
         "operationId": "ServiceObjectives_List",
         "description": "Returns information about an Azure SQL Database Server Service Objectives.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2928,6 +2686,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -2950,14 +2711,7 @@
         ],
         "operationId": "TransparentDataEncryption_CreateOrUpdate",
         "description": "Creates or updates an Azure SQL Database Transparent Data Encryption Operation.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -2986,6 +2740,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -3009,14 +2766,7 @@
         ],
         "operationId": "TransparentDataEncryption_Get",
         "description": "Returns an Azure SQL Database Transparent Data Encryption Response.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -3036,6 +2786,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -3055,14 +2808,7 @@
         ],
         "operationId": "TransparentDataEncryption_ListActivity",
         "description": "Returns an Azure SQL Database Transparent Data Encryption Activity Response.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Resource Group to which the server belongs."
-          },
+        "parameters": [ 
           {
             "name": "serverName",
             "in": "path",
@@ -3082,6 +2828,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
           }
         ],
         "responses": {
@@ -5596,6 +5345,13 @@
       "required": true,
       "type": "string",
       "description": "Client Api Version."
+    },
+    "ResourceGroupParameter": {
+      "name": "resourceGroupName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the Resource Group to which the resource belongs."
     }
   }
 }
