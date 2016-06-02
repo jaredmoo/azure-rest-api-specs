@@ -27,13 +27,6 @@
         "description": "Creates or updates an Azure SQL Database auditing policy.",
         "parameters": [
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -57,6 +50,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -76,13 +72,6 @@
         "description": "Returns an Azure SQL Database auditing policy.",
         "parameters": [
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -97,6 +86,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -115,15 +107,8 @@
           "AuditingPolicy"
         ],
         "operationId": "AuditingPolicy_CreateOrUpdateServerPolicy",
-        "description": "Creates or updates an Azure SQL Database Server auditing policy.",
+        "description": "Creates or updates an Azure SQL Server auditing policy.",
         "parameters": [
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
           {
             "name": "parameters",
             "in": "body",
@@ -131,7 +116,7 @@
             "schema": {
               "$ref": "#/definitions/ServerAuditingPolicyCreateOrUpdateParameters"
             },
-            "description": "The required parameters for createing or updating a Azure SQL Database Server auditing policy."
+            "description": "The required parameters for createing or updating a Azure SQL Server auditing policy."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -141,6 +126,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -157,15 +145,8 @@
           "AuditingPolicy"
         ],
         "operationId": "AuditingPolicy_GetServerPolicy",
-        "description": "Returns an Azure SQL Database server auditing policy.",
+        "description": "Returns an Azure SQL Server auditing policy.",
         "parameters": [
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -174,6 +155,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -194,13 +178,6 @@
         "operationId": "DataMasking_CreateOrUpdatePolicy",
         "description": "Creates or updates an Azure SQL Database data masking policy",
         "parameters": [
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
           {
             "name": "databaseName",
             "in": "path",
@@ -225,6 +202,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -244,13 +224,6 @@
         "description": "Returns an Azure SQL Database data masking policy.",
         "parameters": [
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -265,6 +238,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -283,15 +259,8 @@
           "DataMasking"
         ],
         "operationId": "DataMasking_CreateOrUpdateRule",
-        "description": "Creates or updates an Azure SQL Database Server Firewall rule.",
+        "description": "Creates or updates an Azure SQL Server Firewall rule.",
         "parameters": [
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
           {
             "name": "databaseName",
             "in": "path",
@@ -323,6 +292,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -341,13 +313,6 @@
         "operationId": "DataMasking_Delete",
         "description": "Deletes an Azure SQL Server data masking rule.",
         "parameters": [
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
           {
             "name": "databaseName",
             "in": "path",
@@ -370,6 +335,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -391,13 +359,6 @@
         "description": "Returns a list of Azure SQL Database data masking rules.",
         "parameters": [
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -412,6 +373,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -436,13 +400,6 @@
         "description": "Start an Azure SQL Data Warehouse database pause operation.To determine the status of the operation call GetDatabaseActivationOperationStatus.",
         "parameters": [
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Server on which the data warehouse database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -457,6 +414,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -482,13 +442,6 @@
         "description": "Start an Azure SQL Data Warehouse database resume operation. To determine the status of the operation call GetDatabaseActivationOperationStatus.",
         "parameters": [
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Server on which the data warehouse database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -503,6 +456,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -528,13 +484,6 @@
         "description": "Returns a list of Azure SQL Database restore points.",
         "parameters": [
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -549,6 +498,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -573,13 +525,6 @@
         "description": "Begins creating a new Azure SQL Database or updating an existing Azure SQL Database. To determine the status of the operation call GetDatabaseOperationStatus.",
         "parameters": [
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -603,6 +548,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -632,13 +580,6 @@
         "description": "Deletes the Azure SQL Database with the given name.",
         "parameters": [
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the Azure SQL Database Database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -653,6 +594,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -672,13 +616,6 @@
         "description": "Returns information about an Azure SQL Database.",
         "parameters": [
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -693,6 +630,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -714,13 +654,6 @@
         "description": "Returns information about an Azure SQL Database.",
         "parameters": [ 
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
-          {
             "name": "$filter",
             "in": "query",
             "required": false,
@@ -735,6 +668,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -760,13 +696,6 @@
         "description": "Returns information about Azure SQL Database usages.",
         "parameters": [ 
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server in which the Azure SQL Databases are hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -781,6 +710,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -805,13 +737,6 @@
         "description": "Begins creating a new Azure SQL Database Elastic Pool or updating an existing Azure SQL Database Elastic Pool. To determine the status of the operation call GetElasticPoolOperationStatus.",
         "parameters": [ 
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
-          {
             "name": "elasticPoolName",
             "in": "path",
             "required": true,
@@ -835,6 +760,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -862,14 +790,7 @@
         ],
         "operationId": "ElasticPools_Delete",
         "description": "Deletes the Azure SQL Database Elastic Pool with the given name.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the Azure SQL Database Elastic Pool is hosted."
-          },
+        "parameters": [
           {
             "name": "elasticPoolName",
             "in": "path",
@@ -885,6 +806,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -902,14 +826,7 @@
         ],
         "operationId": "ElasticPools_Get",
         "description": "Returns information about an Azure SQL Database Elastic Pool.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the Azure SQL Database Elastic Pool is hosted."
-          },
+        "parameters": [
           {
             "name": "elasticPoolName",
             "in": "path",
@@ -925,6 +842,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -944,14 +864,7 @@
         ],
         "operationId": "ElasticPools_GetDatabases",
         "description": "Returns information about an Azure SQL Database inside of an Azure Sql Database Elastic Pool.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
+        "parameters": [
           {
             "name": "elasticPoolName",
             "in": "path",
@@ -974,6 +887,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -993,14 +909,7 @@
         ],
         "operationId": "ElasticPools_List",
         "description": "Returns information about Azure SQL Database Elastic Pools.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server in which Azure SQL Database Elastic Pools are hosted."
-          },
+        "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -1009,6 +918,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1031,14 +943,7 @@
         ],
         "operationId": "ElasticPools_ListActivity",
         "description": "Returns information about Azure SQL Database Elastic Pool Activity.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server in which Azure SQL Database Elastic Pools are hosted."
-          },
+        "parameters": [
           {
             "name": "elasticPoolName",
             "in": "path",
@@ -1054,6 +959,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1078,13 +986,6 @@
         "description": "Returns information about activity on Azure SQL Databases inside of an Azure Sql Database Elastic Pool.",
         "parameters": [ 
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the Elastic Pool is hosted."
-          },
-          {
             "name": "elasticPoolName",
             "in": "path",
             "required": true,
@@ -1099,6 +1000,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1123,13 +1027,6 @@
         "description": "Returns information about an Azure SQL Database inside of an Azure Sql Database Elastic Pool.",
         "parameters": [ 
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
-          {
             "name": "elasticPoolName",
             "in": "path",
             "required": true,
@@ -1144,6 +1041,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1165,21 +1065,14 @@
           "FirewallRules"
         ],
         "operationId": "FirewallRules_CreateOrUpdate",
-        "description": "Creates or updates an Azure SQL Database Server Firewall rule.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
+        "description": "Creates or updates an Azure SQL Server Firewall rule.",
+        "parameters": [
           {
             "name": "firewallRule",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Database Server Firewall Rule."
+            "description": "The name of the Azure SQL Server Firewall Rule."
           },
           {
             "name": "parameters",
@@ -1198,6 +1091,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1220,21 +1116,14 @@
           "FirewallRules"
         ],
         "operationId": "FirewallRules_Delete",
-        "description": "Deletes an Azure SQL Database Server Firewall rule.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
+        "description": "Deletes an Azure SQL Server Firewall rule.",
+        "parameters": [
           {
             "name": "firewallRule",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Database Server Firewall Rule."
+            "description": "The name of the Azure SQL Server Firewall Rule."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -1244,6 +1133,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1260,21 +1152,14 @@
           "FirewallRules"
         ],
         "operationId": "FirewallRules_Get",
-        "description": "Returns an Azure SQL Database Server Firewall rule.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
+        "description": "Returns an Azure SQL Server Firewall rule.",
+        "parameters": [
           {
             "name": "firewallRule",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Database Server Firewall Rule."
+            "description": "The name of the Azure SQL Server Firewall Rule."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -1284,6 +1169,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1302,15 +1190,8 @@
           "FirewallRules"
         ],
         "operationId": "FirewallRules_List",
-        "description": "Returns a list of Azure SQL Database Server Firewall rules.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
+        "description": "Returns a list of Azure SQL Server Firewall rules.",
+        "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -1319,6 +1200,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1373,14 +1257,7 @@
         ],
         "operationId": "RecommendedElasticPools_Get",
         "description": "Returns information about an Azure SQL Recommended Elastic Pool.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server for which the Azure SQL Recommended Elastic Pool is."
-          },
+        "parameters": [
           {
             "name": "recommendedElasticPoolName",
             "in": "path",
@@ -1396,6 +1273,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1416,13 +1296,6 @@
         "operationId": "RecommendedElasticPools_GetDatabases",
         "description": "Returns information about an Azure SQL Database inside of an Azure Sql Recommended Elastic Pool.",
         "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
           {
             "name": "recommendedElasticPoolName",
             "in": "path",
@@ -1445,6 +1318,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1464,14 +1340,7 @@
         ],
         "operationId": "RecommendedElasticPools_List",
         "description": "Returns information about Azure SQL Recommended Elastic Pools.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server in which Azure SQL Recommended Elastic Pools are hosted."
-          },
+        "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -1480,6 +1349,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1502,14 +1374,7 @@
         ],
         "operationId": "RecommendedElasticPools_ListDatabases",
         "description": "Returns information about an Azure SQL Database inside of an Azure Sql Recommended Elastic Pool.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
+        "parameters": [
           {
             "name": "recommendedElasticPoolName",
             "in": "path",
@@ -1522,6 +1387,9 @@
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1544,14 +1412,7 @@
         ],
         "operationId": "RecommendedElasticPools_ListMetrics",
         "description": "Returns information about an recommended elastic pool metrics.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server."
-          },
+        "parameters": [
           {
             "name": "recommendedElasticPoolName",
             "in": "path",
@@ -1567,6 +1428,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -1589,14 +1453,7 @@
         ],
         "operationId": "RecommendedIndexes_Get",
         "description": "Returns details on recommended index.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL server."
-          },
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -1633,6 +1490,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -1651,13 +1511,6 @@
         "operationId": "RecommendedIndexes_Update",
         "description": "We execute or cancel index operations by updating index state. Allowed state transitions are :Active          -> Pending          - Start index creation processPending         -> Active           - Cancel index creationActive/Pending  -> Ignored          - Ignore index recommendation so it will no longer show in active recommendationsIgnored         -> Active           - Restore index recommendationSuccess         -> Pending Revert   - Revert index that has been createdPending Revert  -> Revert Canceled  - Cancel index revert operation",
         "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
           {
             "name": "databaseName",
             "in": "path",
@@ -1703,6 +1556,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -1722,14 +1578,7 @@
         ],
         "operationId": "DatabaseReplicationLinks_Delete",
         "description": "Deletes the Azure SQL Database Replication Link with the given id.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Server on which the Azure SQL Database is hosted."
-          },
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -1752,6 +1601,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -1769,14 +1621,7 @@
         ],
         "operationId": "DatabaseReplicationLinks_Get",
         "description": "Returns information about an Azure SQL Database Replication Link.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Server on which the database is hosted."
-          },
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -1799,6 +1644,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -1820,13 +1668,6 @@
         "description": "Begins failover of the Azure SQL Database Replication Link with the given id.",
         "parameters": [ 
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Server on which the Azure SQL Database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -1848,6 +1689,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -1868,14 +1712,7 @@
         ],
         "operationId": "DatabaseReplicationLinks_FailoverAllowDataLoss",
         "description": "Begins a forced failover of the Azure SQL Database Replication Link with the given id which may result in data loss.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Server on which the Azure SQL Database is hosted."
-          },
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -1898,6 +1735,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -1918,14 +1758,7 @@
         ],
         "operationId": "DatabaseReplicationLinks_List",
         "description": "Returns information about Azure SQL Database Replication Links.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Server in which the Azure SQL Database is hosted."
-          },
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -1941,6 +1774,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -1962,15 +1798,8 @@
           "SecureConnection"
         ],
         "operationId": "SecureConnection_CreateOrUpdateDatabasePolicy",
-        "description": "Creates or updates an Azure SQL Database Server Firewall rule.",
+        "description": "Creates or updates an Azure SQL Server Firewall rule.",
         "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
           {
             "name": "databaseName",
             "in": "path",
@@ -1995,6 +1824,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -2012,14 +1844,7 @@
         ],
         "operationId": "SecureConnection_GetDatabasePolicy",
         "description": "Returns an Azure SQL Database secure connection policy.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -2035,6 +1860,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -2054,14 +1882,7 @@
         ],
         "operationId": "ServerAdministrators_CreateOrUpdate",
         "description": "Begins creating a new Azure SQL Server Active Directory Administrator or updating an existing Azure SQL Server Active Directory Administrator. To determine the status of the operation call GetServerAdministratorOperationStatus.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Server to which the Azure SQL Server Active Directory administrator belongs"
-          },
+        "parameters": [
           {
             "name": "administratorName",
             "in": "path",
@@ -2086,6 +1907,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2113,14 +1937,7 @@
         ],
         "operationId": "ServerAdministrators_Delete",
         "description": "Begins deleting an existing Azure SQL Server Active Directory Administrator.To determine the status of the operation call GetServerAdministratorDeleteOperationStatus.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Server to which the Azure SQL Server Active Directory administrator belongs"
-          },
+        "parameters": [
           {
             "name": "administratorName",
             "in": "path",
@@ -2136,6 +1953,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2163,14 +1983,7 @@
         ],
         "operationId": "ServerAdministrators_Get",
         "description": "Returns an Azure SQL Server Administrator.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Server to which the Azure SQL Server Active Directory administrator belongs."
-          },
+        "parameters": [
           {
             "name": "administratorName",
             "in": "path",
@@ -2186,6 +1999,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2205,14 +2021,7 @@
         ],
         "operationId": "ServerAdministrators_List",
         "description": "Returns a list of Azure SQL Server Administrators.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Server to which the Azure SQL Server Active Directory administrators belongs."
-          },
+        "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -2221,6 +2030,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2242,15 +2054,8 @@
           "Servers"
         ],
         "operationId": "Servers_CreateOrUpdate",
-        "description": "Creates a new Azure SQL Database server.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
+        "description": "Creates a new Azure SQL Server.",
+        "parameters": [
           {
             "name": "parameters",
             "in": "body",
@@ -2258,7 +2063,7 @@
             "schema": {
               "$ref": "#/definitions/ServerCreateOrUpdateParameters"
             },
-            "description": "The required parameters for createing or updating a database."
+            "description": "The required parameters for createing or updating a server."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -2268,6 +2073,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2290,15 +2098,8 @@
           "Servers"
         ],
         "operationId": "Servers_Delete",
-        "description": "Returns information about an Azure SQL Database Server.",
+        "description": "Returns information about an Azure SQL Server.",
         "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the server to delete."
-          },
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -2307,6 +2108,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2323,15 +2127,8 @@
           "Servers"
         ],
         "operationId": "Servers_Get",
-        "description": "Returns information about an Azure SQL Database Server.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the server to retrieve."
-          },
+        "description": "Returns information about an Azure SQL Server.",
+        "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -2340,6 +2137,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2358,7 +2158,7 @@
           "Servers"
         ],
         "operationId": "Servers_List",
-        "description": "Returns information about an Azure SQL Database Server.",
+        "description": "Returns information about an Azure SQL Server.",
         "parameters": [ 
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -2389,15 +2189,8 @@
           "Servers"
         ],
         "operationId": "Servers_ListUsages",
-        "description": "Returns information about Azure SQL Database Server usage.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server in which the Azure SQL Databases are hosted."
-          },
+        "description": "Returns information about Azure SQL Server usage.",
+        "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -2406,6 +2199,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2427,15 +2223,8 @@
           "ServerUpgrades"
         ],
         "operationId": "ServerUpgrades_Cancel",
-        "description": "Cancel a pending upgrade for the Azure SQL Database server.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server to cancel upgrade."
-          },
+        "description": "Cancel a pending upgrade for the Azure SQL Server.",
+        "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -2444,6 +2233,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2457,15 +2249,8 @@
           "ServerUpgrades"
         ],
         "operationId": "ServerUpgrades_Get",
-        "description": "Returns information about Upgrade status of an Azure SQL Database Server.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server to upgrade."
-          },
+        "description": "Returns information about Upgrade status of an Azure SQL Server.",
+        "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -2474,6 +2259,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2495,15 +2283,8 @@
           "ServerUpgrades"
         ],
         "operationId": "ServerUpgrades_Start",
-        "description": "Start an Azure SQL Database Server Upgrade.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server to upgrade."
-          },
+        "description": "Start an Azure SQL Server Upgrade.",
+        "parameters": [
           {
             "name": "parameters",
             "in": "body",
@@ -2511,7 +2292,7 @@
             "schema": {
               "$ref": "#/definitions/ServerUpgradeStartParameters"
             },
-            "description": "The required parameters for the Azure SQL Database Server Upgrade."
+            "description": "The required parameters for the Azure SQL Server Upgrade."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -2521,6 +2302,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2537,14 +2321,7 @@
         ],
         "operationId": "ServiceTierAdvisors_Get",
         "description": "Returns information about a service tier advisor.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of server."
-          },
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -2567,6 +2344,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -2586,14 +2366,7 @@
         ],
         "operationId": "ServiceTierAdvisors_List",
         "description": "Returns information about service tier advisors for specified database.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of server."
-          },
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -2609,6 +2382,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -2630,15 +2406,8 @@
           "ServiceObjectives"
         ],
         "operationId": "ServiceObjectives_Get",
-        "description": "Returns information about an Azure SQL Database Server Service Objectives.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Server."
-          },
+        "description": "Returns information about an Azure SQL Database Service Objective.",
+        "parameters": [
           {
             "name": "serviceObjectiveName",
             "in": "path",
@@ -2654,6 +2423,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2672,15 +2444,8 @@
           "ServiceObjectives"
         ],
         "operationId": "ServiceObjectives_List",
-        "description": "Returns information about an Azure SQL Database Server Service Objectives.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Server."
-          },
+        "description": "Returns information about Azure SQL Database Service Objectives.",
+        "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -2689,6 +2454,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
           }
         ],
         "responses": {
@@ -2711,14 +2479,7 @@
         ],
         "operationId": "TransparentDataEncryption_CreateOrUpdate",
         "description": "Creates or updates an Azure SQL Database Transparent Data Encryption Operation.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -2743,6 +2504,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -2768,13 +2532,6 @@
         "description": "Returns an Azure SQL Database Transparent Data Encryption Response.",
         "parameters": [ 
           {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
-          {
             "name": "databaseName",
             "in": "path",
             "required": true,
@@ -2789,6 +2546,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -2808,14 +2568,7 @@
         ],
         "operationId": "TransparentDataEncryption_ListActivity",
         "description": "Returns an Azure SQL Database Transparent Data Encryption Activity Response.",
-        "parameters": [ 
-          {
-            "name": "serverName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the Azure SQL Database Server on which the database is hosted."
-          },
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -2831,6 +2584,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameter"
           }
         ],
         "responses": {
@@ -2858,42 +2614,42 @@
         "auditingState": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the auditing state of the Azure SQL Database server auditing policy."
+          "description": "Gets the auditing state of the Azure SQL Server auditing policy."
         },
         "eventTypesToAudit": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the events types of the Azure SQL Database server auditing policy."
+          "description": "Gets the events types of the Azure SQL Server auditing policy."
         },
         "storageAccountName": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the storage account name of the Azure SQL Database server auditing policy."
+          "description": "Gets the storage account name of the Azure SQL Server auditing policy."
         },
         "storageAccountKey": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the primary storage account key of the Azure SQL Database server auditing policy."
+          "description": "Gets the primary storage account key of the Azure SQL Server auditing policy."
         },
         "storageAccountSecondaryKey": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets secondary key of the storage account of the Azure SQL Database server auditing policy."
+          "description": "Gets secondary key of the storage account of the Azure SQL Server auditing policy."
         },
         "storageTableEndpoint": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the storage table endpoint of the Azure SQL Database Server auditing policy."
+          "description": "Gets the storage table endpoint of the Azure SQL Server auditing policy."
         },
         "storageAccountResourceGroupName": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the resource group of the storage account of the Azure SQL Database server auditing policy."
+          "description": "Gets the resource group of the storage account of the Azure SQL Server auditing policy."
         },
         "storageAccountSubscriptionId": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the subscription Id of the storage account of the Azure SQL Database server auditing policy."
+          "description": "Gets the subscription Id of the storage account of the Azure SQL Server auditing policy."
         },
         "retentionDays": {
           "readOnly": true,
@@ -2944,42 +2700,42 @@
         "auditingState": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the auditing state of the Azure SQL Database server auditing policy."
+          "description": "Gets the auditing state of the Azure SQL Server auditing policy."
         },
         "eventTypesToAudit": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the events types of the Azure SQL Database server auditing policy."
+          "description": "Gets the events types of the Azure SQL Server auditing policy."
         },
         "storageAccountName": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the storage account name of the Azure SQL Database server auditing policy."
+          "description": "Gets the storage account name of the Azure SQL Server auditing policy."
         },
         "storageAccountKey": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the primary storage account key of the Azure SQL Database server auditing policy."
+          "description": "Gets the primary storage account key of the Azure SQL Server auditing policy."
         },
         "storageAccountSecondaryKey": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets secondary key of the storage account of the Azure SQL Database server auditing policy."
+          "description": "Gets secondary key of the storage account of the Azure SQL Server auditing policy."
         },
         "storageTableEndpoint": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the storage table endpoint of the Azure SQL Database Server auditing policy."
+          "description": "Gets the storage table endpoint of the Azure SQL Server auditing policy."
         },
         "storageAccountResourceGroupName": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the resource group of the storage account of the Azure SQL Database server auditing policy."
+          "description": "Gets the resource group of the storage account of the Azure SQL Server auditing policy."
         },
         "storageAccountSubscriptionId": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the subscription Id of the storage account of the Azure SQL Database server auditing policy."
+          "description": "Gets the subscription Id of the storage account of the Azure SQL Server auditing policy."
         },
         "retentionDays": {
           "readOnly": true,
@@ -3009,7 +2765,7 @@
       "required": [
         "properties"
       ],
-      "description": "Create or update Azure SQL Database Server audting policy parameters."
+      "description": "Create or update Azure SQL Server audting policy parameters."
     },
     "ServerAuditingPolicy": {
       "properties": {
@@ -3023,7 +2779,7 @@
           "$ref": "#/definitions/Resource"
         }
       ],
-      "description": "Represents an Azure SQL Database server auditing policy."
+      "description": "Represents an Azure SQL Server auditing policy."
     },
     "DataMaskingPolicyProperties": {
       "properties": {
@@ -4054,7 +3810,7 @@
         "serverName": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the name of the Azure Sql Database Server the Elastic Pool is in."
+          "description": "Gets the name of the Azure SQL Server the Elastic Pool is in."
         },
         "startTime": {
           "readOnly": true,
@@ -4165,7 +3921,7 @@
         "serverName": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the name of the Azure Sql Database Server the Elastic Pool is in."
+          "description": "Gets the name of the Azure SQL Server the Elastic Pool is in."
         },
         "startTime": {
           "readOnly": true,
@@ -4245,7 +4001,7 @@
           "description": "Gets the end IP address of the Azure SQL Database Firewall Rule."
         }
       },
-      "description": "Represents the properties of an Azure SQL Database Server Firewall Rule."
+      "description": "Represents the properties of an Azure SQL Server Firewall Rule."
     },
     "FirewallRule": {
       "properties": {
@@ -4259,7 +4015,7 @@
           "$ref": "#/definitions/Resource"
         }
       ],
-      "description": "Represents an Azure SQL Database Server Firewall Rule."
+      "description": "Represents an Azure SQL Server Firewall Rule."
     },
     "FirewallRuleListResult": {
       "properties": {
@@ -4268,7 +4024,7 @@
           "items": {
             "$ref": "#/definitions/FirewallRule"
           },
-          "description": "Gets or sets the list of Azure Sql Database Server firewall rules for the server."
+          "description": "Gets or sets the list of Azure SQL Server firewall rules for the server."
         }
       },
       "description": "Represents the response to a List Firewall Rules request."
@@ -4938,7 +4694,7 @@
           "$ref": "#/definitions/Resource"
         }
       ],
-      "description": "Represents an Azure SQL Database Server."
+      "description": "Represents an Azure SQL Server."
     },
     "ServerListResult": {
       "properties": {
@@ -4947,10 +4703,10 @@
           "items": {
             "$ref": "#/definitions/Server"
           },
-          "description": "Gets or sets the list of Azure Sql Database Servers."
+          "description": "Gets or sets the list of Azure SQL Servers."
         }
       },
-      "description": "Represents the response to a Get Azure Sql Database Server request."
+      "description": "Represents the response to a Get Azure SQL Server request."
     },
     "ServerMetric": {
       "properties": {
@@ -4991,26 +4747,26 @@
           "items": {
             "$ref": "#/definitions/ServerMetric"
           },
-          "description": "Gets or sets the list of Azure Sql Database Server metrics for the server."
+          "description": "Gets or sets the list of Azure SQL Server metrics for the server."
         }
       },
-      "description": "Represents the response to a List Azure Sql Database Server metrics request."
+      "description": "Represents the response to a List Azure SQL Server metrics request."
     },
     "ServerUpgradeGetResult": {
       "properties": {
         "status": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the status of the Azure SQL Database Server Upgrade."
+          "description": "Gets the status of the Azure SQL Server Upgrade."
         },
         "scheduleUpgradeAfterTime": {
           "readOnly": true,
           "type": "string",
           "format": "date-time",
-          "description": "Gets the schedule time of the Azure SQL Database Server Upgrade."
+          "description": "Gets the schedule time of the Azure SQL Server Upgrade."
         }
       },
-      "description": "Represents the response to a Get request for Upgrade status of an Azure SQL Database Server."
+      "description": "Represents the response to a Get request for Upgrade status of an Azure SQL Server."
     },
     "RecommendedDatabaseProperties": {
       "properties": {
@@ -5077,44 +4833,44 @@
       "properties": {
         "Version": {
           "type": "string",
-          "description": "Gets or sets the version for the Azure SQL Database Server being upgraded."
+          "description": "Gets or sets the version for the Azure SQL Server being upgraded."
         },
         "ScheduleUpgradeAfterUtcDateTime": {
           "type": "string",
           "format": "date-time",
-          "description": "Gets or sets the earliest time to upgrade the Azure SQL Database Server."
+          "description": "Gets or sets the earliest time to upgrade the Azure SQL Server."
         },
         "DatabaseCollection": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/RecommendedDatabaseProperties"
           },
-          "description": "Gets or sets the collection of recommended database properties to upgrade the Azure SQL Database Server."
+          "description": "Gets or sets the collection of recommended database properties to upgrade the Azure SQL Server."
         },
         "ElasticPoolCollection": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/UpgradeRecommendedElasticPoolProperties"
           },
-          "description": "Gets or sets the collection of recommended elastic pool properties to upgrade the Azure SQL Database Server."
+          "description": "Gets or sets the collection of recommended elastic pool properties to upgrade the Azure SQL Server."
         }
       },
       "required": [
         "Version"
       ],
-      "description": "Start Azure SQL Database Server Upgrade properties."
+      "description": "Start Azure SQL Server Upgrade properties."
     },
     "ServerUpgradeStartParameters": {
       "properties": {
         "serverUpgradeProperties": {
           "$ref": "#/definitions/ServerUpgradeProperties",
-          "description": "Gets or sets the properties of the Azure SQL Database Server Upgrade."
+          "description": "Gets or sets the properties of the Azure SQL Server Upgrade."
         }
       },
       "required": [
         "serverUpgradeProperties"
       ],
-      "description": "Start Azure SQL Database Server Upgrade parameters."
+      "description": "Start Azure SQL Server Upgrade parameters."
     },
     "ServiceTierAdvisorListResult": {
       "properties": {
@@ -5352,6 +5108,20 @@
       "required": true,
       "type": "string",
       "description": "The name of the Resource Group to which the resource belongs."
+    },
+    "ServerNameParameter": {
+      "name": "serverName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the Azure SQL Server on which the Azure SQL Database is hosted."
+    },
+    "ServerNameParameterGeneric": {
+      "name": "serverName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the Azure SQL Server"
     }
   }
 }
