@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "SqlManagementClient",
-    "description": "The Windows Azure SQL Database management API provides a RESTful set of web services that interact with Windows Azure SQL Database services to manage your databases. The API enables users to create, retrieve, update, and delete databases and servers.",
+    "description": "The Azure SQL Database management API provides a RESTful set of web services that interact with Azure SQL Database services to manage your databases. The API enables users to create, retrieve, update, and delete databases, servers, and other entities.",
     "version": "2014-04-01"
   },
   "host": "management.azure.com",
@@ -752,14 +752,14 @@
           "ElasticPools"
         ],
         "operationId": "ElasticPools_CreateOrUpdate",
-        "description": "Begins creating a new Azure SQL Database Elastic Pool or updating an existing Azure SQL Database Elastic Pool. To determine the status of the operation call GetElasticPoolOperationStatus.",
+        "description": "Begins creating a new Azure SQL Elastic Pool or updating an existing Azure SQL Elastic Pool. To determine the status of the operation call GetElasticPoolOperationStatus.",
         "parameters": [ 
           {
             "name": "elasticPoolName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Database Elastic Pool to be operated on (Updated or created)."
+            "description": "The name of the Azure SQL Elastic Pool to be operated on (Updated or created)."
           },
           {
             "name": "parameters",
@@ -807,14 +807,14 @@
           "ElasticPools"
         ],
         "operationId": "ElasticPools_Delete",
-        "description": "Deletes the Azure SQL Database Elastic Pool with the given name.",
+        "description": "Deletes the Azure SQL Elastic Pool with the given name.",
         "parameters": [
           {
             "name": "elasticPoolName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Database Elastic Pool to be deleted."
+            "description": "The name of the Azure SQL Elastic Pool to be deleted."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -843,14 +843,14 @@
           "ElasticPools"
         ],
         "operationId": "ElasticPools_Get",
-        "description": "Returns information about an Azure SQL Database Elastic Pool.",
+        "description": "Returns information about an Azure SQL Elastic Pool.",
         "parameters": [
           {
             "name": "elasticPoolName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Database Elastic Pool to be retrieved."
+            "description": "The name of the Azure SQL Elastic Pool to be retrieved."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -881,14 +881,14 @@
           "ElasticPools"
         ],
         "operationId": "ElasticPools_GetDatabases",
-        "description": "Returns information about an Azure SQL Database inside of an Azure Sql Database Elastic Pool.",
+        "description": "Returns information about an Azure SQL Database inside of an Azure SQL Elastic Pool.",
         "parameters": [
           {
             "name": "elasticPoolName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Database Elastic Pool to be retrieved."
+            "description": "The name of the Azure SQL Elastic Pool to be retrieved."
           },
           {
             "name": "databaseName",
@@ -926,7 +926,7 @@
           "ElasticPools"
         ],
         "operationId": "ElasticPools_List",
-        "description": "Returns information about Azure SQL Database Elastic Pools.",
+        "description": "Returns information about Azure SQL Elastic Pools.",
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -960,14 +960,14 @@
           "ElasticPools"
         ],
         "operationId": "ElasticPools_ListActivity",
-        "description": "Returns information about Azure SQL Database Elastic Pool Activity.",
+        "description": "Returns information about Azure SQL Elastic Pool Activity.",
         "parameters": [
           {
             "name": "elasticPoolName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Database Elastic Pool for which to get the current activity."
+            "description": "The name of the Azure SQL Elastic Pool for which to get the current activity."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -1001,14 +1001,14 @@
           "ElasticPools"
         ],
         "operationId": "ElasticPools_ListDatabaseActivity",
-        "description": "Returns information about activity on Azure SQL Databases inside of an Azure Sql Database Elastic Pool.",
+        "description": "Returns information about activity on Azure SQL Databases inside of an Azure SQL Elastic Pool.",
         "parameters": [ 
           {
             "name": "elasticPoolName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Database Elastic Pool."
+            "description": "The name of the Azure SQL Elastic Pool."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -1042,14 +1042,14 @@
           "ElasticPools"
         ],
         "operationId": "ElasticPools_ListDatabases",
-        "description": "Returns information about an Azure SQL Database inside of an Azure Sql Database Elastic Pool.",
+        "description": "Returns information about an Azure SQL Database inside of an Azure SQL Elastic Pool.",
         "parameters": [ 
           {
             "name": "elasticPoolName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Database Elastic Pool to be retrieved."
+            "description": "The name of the Azure SQL Elastic Pool to be retrieved."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -1319,7 +1319,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Database Elastic Pool to be retrieved."
+            "description": "The name of the Azure SQL Elastic Pool to be retrieved."
           },
           {
             "name": "databaseName",
@@ -3483,7 +3483,9 @@
             "Basic",
             "Standard",
             "Premium",
-            "Free"
+            "Free",
+            "Stretch",
+            "DataWarehouse"
           ],
           "x-ms-enum": {
             "name": "DatabaseEditions",
@@ -3519,7 +3521,7 @@
         "elasticPoolName": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the name of the Azure SQL Database Elastic Pool the database is in."
+          "description": "Gets the name of the Azure SQL Elastic Pool the database is in."
         },
         "serviceTierAdvisors": {
           "readOnly": true,
@@ -3624,7 +3626,7 @@
       "properties": {
         "edition": {
           "type": "string",
-          "description": "Gets or sets the edition for the Azure Sql Database Elastic Pool being updated or created."
+          "description": "Gets or sets the edition for the Azure SQL Elastic Pool being updated or created."
         },
         "dtu": {
           "type": "integer",
@@ -3648,7 +3650,7 @@
           "description": "Gets the maximum DTU any one Sql Azure Database can consume."
         }
       },
-      "description": "Create or update Azure Sql Database Elastic Pool parameters properties."
+      "description": "Create or update Azure SQL Elastic Pool parameters properties."
     },
     "ElasticPoolCreateOrUpdateParameters": {
       "properties": {
@@ -3673,24 +3675,21 @@
           "readOnly": true,
           "type": "string",
           "format": "date-time",
-          "description": "Gets the creation date of the Azure SQL Database Elastic Pool."
+          "description": "Gets the creation date of the Azure SQL Elastic Pool."
         },
         "state": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the state of the Azure SQL Database Elastic Pool."
+          "description": "Gets the state of the Azure SQL Elastic Pool."
         },
         "edition": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the edition of the Azure SQL Database Elastic Pool.  The DatabaseEditions enumeration contains all the valid editions.",
+          "description": "Gets the edition of the Azure SQL Elastic Pool.",
           "enum": [
-            "Web",
-            "Business",
             "Basic",
             "Standard",
-            "Premium",
-            "Free"
+            "Premium"
           ],
           "x-ms-enum": {
             "name": "DatabaseEditions",
@@ -3722,7 +3721,7 @@
           "description": "Gets storage limit for the Sql Azure Database Elastic Pool in MB."
         }
       },
-      "description": "Represents the properties of an Azure SQL Database Elastic Pool."
+      "description": "Represents the properties of an Azure SQL Elastic Pool."
     },
     "ElasticPool": {
       "properties": {
@@ -3736,7 +3735,7 @@
           "$ref": "#/definitions/Resource"
         }
       ],
-      "description": "Represents an Azure SQL Database Elastic Pool (Elastic Pool)."
+      "description": "Represents an Azure SQL Elastic Pool (Elastic Pool)."
     },
     "ElasticPoolListResult": {
       "properties": {
@@ -3842,7 +3841,7 @@
           "description": "Gets the current state of the operation."
         }
       },
-      "description": "Represents the properties of an Azure SQL Database Elastic Pool."
+      "description": "Represents the properties of an Azure SQL Elastic Pool."
     },
     "ElasticPoolActivity": {
       "properties": {
@@ -3953,7 +3952,7 @@
           "description": "Gets the current state of the operation."
         }
       },
-      "description": "Represents the properties of an Azure SQL Database Elastic Pool Database Activity."
+      "description": "Represents the properties of an Azure SQL Elastic Pool Database Activity."
     },
     "ElasticPoolDatabaseActivity": {
       "properties": {
@@ -3967,7 +3966,7 @@
           "$ref": "#/definitions/Resource"
         }
       ],
-      "description": "Represents the activity on an Azure SQL Database Elastic Pool."
+      "description": "Represents the activity on an Azure SQL Elastic Pool."
     },
     "ElasticPoolDatabaseActivityListResult": {
       "properties": {
@@ -4698,7 +4697,7 @@
           "description": "Gets the administrator login password."
         }
       },
-      "description": "Represents the properties of an Azure SQL Database."
+      "description": "Represents the properties of an Azure SQL Server."
     },
     "Server": {
       "properties": {
@@ -4756,7 +4755,7 @@
           "description": "Gets or sets the next reset time for the metric."
         }
       },
-      "description": "Represents Azure SQL Database metrics."
+      "description": "Represents Azure SQL Server metrics."
     },
     "ServerMetricListResult": {
       "properties": {
