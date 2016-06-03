@@ -18,6 +18,75 @@
     "text/json"
   ],
   "paths": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/restorableDroppedDatabases": {
+      "get" : {
+        "tags": [
+          "DeletedDatabaseBackup"
+        ],
+        "operationId":"DatabaseBackup_ListDeletedDatabaseBackups",
+        "description":"Returns a list of Azure SQL deleted database backups (a resource representing a deleted database that can be restored).",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DeletedDatabaseBackupList"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/restorableDroppedDatabases/{databaseName}": {
+      "get" : {
+        "tags": [
+          "DeletedDatabaseBackup"
+        ],
+        "operationId":"DatabaseBackup_GetDeletedDatabaseBackup",
+        "description":"Returns an Azure SQL deleted database backup (a resource representing a deleted database that can be restored).",
+        "parameters": [
+          {
+            "name": "databaseName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the restorable dropped Azure SQL Database to be retrieved."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DeletedDatabaseBackup"
+            }
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/auditingPolicies/Default": {
       "put": {
         "tags": [
@@ -3565,6 +3634,82 @@
         }
       ],
       "description": "Represents an Azure SQL Database."
+    },
+    "DeletedDatabaseBackup" : {
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/DeletedDatabaseBackupProperties",
+          "description":"Gets or sets the object representing a given Azure Sql Database deleted database backup."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
+      "description": "Represents an Azure SQL Database restorable deleted database."
+    },
+    "DeletedDatabaseBackupProperties" : {
+      "properties": {
+        "databaseName": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the Azure SQL Database name."
+        },
+        "creationDate": {
+          "readOnly": true,
+          "type": "string",
+          "format": "date-time",
+          "description": "Gets the creation date of the Azure SQL Database."
+        },
+        "deletionDate": {
+          "readOnly": true,
+          "type": "string",
+          "format": "date-time",
+          "description": "Gets the deletion date of the Azure SQL Database."
+        },
+        "earliestRestoreDate": {
+          "readOnly": true,
+          "type": "string",
+          "format": "date-time",
+          "description": "Gets the recovery period starte date of the Azure SQL Database. This records the start date and time when recovery is available for this Azure SQL Database."
+        },
+        "edition": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the edition of the Azure SQL Database.",
+        },
+        "maxSizeBytes": {
+          "readOnly": true,
+          "type": "integer",
+          "format": "int64",
+          "description": "Gets the max size of the Azure SQL Database expressed in bytes."
+        },
+        "serviceLevelObjective": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the Service Level Objective of the Azure SQL Database."
+        },
+        "elasticPoolName": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the name of the Azure SQL Elastic Pool the database is in."
+        },
+        
+      },
+      "description": "Represents the properties of an Azure SQL Database restorable deleted database."
+    },
+    "DeletedDatabaseBackupList": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeletedDatabaseBackup"
+          },
+          "description": "Gets or sets the list of a given Azure Sql Database deleted database backups."
+        }
+      },
+      "description": "Represents the response to a List Azure Sql Database deleted database backups request."
     },
     "DatabaseListResult": {
       "properties": {
