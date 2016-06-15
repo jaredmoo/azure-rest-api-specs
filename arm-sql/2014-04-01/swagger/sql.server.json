@@ -1,0 +1,1013 @@
+{
+    /* 
+    
+        Operation Group: Servers
+
+    */
+  "swagger": "2.0",
+  "info": {
+    "title": "SqlManagementClient",
+    "description": "The Azure SQL Database management API provides a RESTful set of web services that interact with Azure SQL Database services to manage your databases. The API enables users to create, retrieve, update, and delete databases, servers, and other entities.",
+    "version": "2014-04-01"
+  },
+  "host": "management.azure.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json",
+    "text/json"
+  ],
+  "produces": [
+    "application/json",
+    "text/json"
+  ],
+  "paths": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}": {
+      "put": {
+        "tags": [
+          "Servers"
+        ],
+        "operationId": "Servers_CreateOrUpdate",
+        "description": "Creates a new Azure SQL Server.",
+        "parameters": [
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ServerCreateOrUpdateParameters"
+            },
+            "description": "The required parameters for createing or updating a server."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Server"
+            }
+          },
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Server"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Servers"
+        ],
+        "operationId": "Servers_Delete",
+        "description": "Returns information about an Azure SQL Server.",
+        "parameters": [ 
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "204": {
+            "description": ""
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Servers"
+        ],
+        "operationId": "Servers_Get",
+        "description": "Returns information about an Azure SQL Server.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Server"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers": {
+      "get": {
+        "tags": [
+          "Servers"
+        ],
+        "operationId": "Servers_List",
+        "description": "Returns information about an Azure SQL Server.",
+        "parameters": [ 
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ServerListResult"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": null
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/usages": {
+      "get": {
+        "tags": [
+          "Servers"
+        ],
+        "operationId": "Servers_ListUsages",
+        "description": "Returns information about Azure SQL Server usage.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ServerMetricListResult"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": null
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/operationResults/versionUpgrade": {
+      "delete": {
+        "tags": [
+          "ServerUpgrades"
+        ],
+        "operationId": "ServerUpgrades_Cancel",
+        "description": "Cancel a pending upgrade for the Azure SQL Server.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": ""
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "ServerUpgrades"
+        ],
+        "operationId": "ServerUpgrades_Get",
+        "description": "Returns information about Upgrade status of an Azure SQL Server.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ServerUpgradeGetResult"
+            }
+          },
+          "202": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/upgrade": {
+      "post": {
+        "tags": [
+          "ServerUpgrades"
+        ],
+        "operationId": "ServerUpgrades_Start",
+        "description": "Start an Azure SQL Server Upgrade.",
+        "parameters": [
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ServerUpgradeStartParameters"
+            },
+            "description": "The required parameters for the Azure SQL Server Upgrade."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/serviceObjectives/{serviceObjectiveName}": {
+      "get": {
+        "tags": [
+          "ServiceObjectives"
+        ],
+        "operationId": "ServiceObjectives_Get",
+        "description": "Returns information about an Azure SQL Database Service Objective.",
+        "parameters": [
+          {
+            "name": "serviceObjectiveName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the service objective to retrieve."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ServiceObjective"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/serviceObjectives": {
+      "get": {
+        "tags": [
+          "ServiceObjectives"
+        ],
+        "operationId": "ServiceObjectives_List",
+        "description": "Returns information about Azure SQL Database Service Objectives.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ServiceObjectiveListResult"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": null
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/import": {
+      "post" : {
+        "tags": [
+          "ImportExport"
+        ],
+        "operationId":"Servers_ImportDatabase",
+        "description":"Imports a bacpac to Azure SQL Database.",
+        "parameters": [
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ImportRequestParameters"
+            },
+            "description": "The required parameters for importing a Bacpac into a database."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": ""
+          },
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ImportExportOperationStatusResponse"
+            }
+          },
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ImportExportOperationStatusResponse"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/disasterRecoveryConfiguration": {
+      "get" : {
+        "tags": [
+          "ServerDisasterRecoveryConfiguration"
+        ],
+        "operationId":"Servers_DisasterRecoveryConfiguration_List",
+        "description":"Returns a list of Azure SQL Server disaster recovery configurations.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ServerDisasterRecoveryConfigurationList"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/disasterRecoveryConfiguration/{serverDisasterRecoveryConfigurationName}": {
+      "get" : {
+        "tags": [
+          "ServerDisasterRecoveryConfiguration"
+        ],
+        "operationId":"Servers_DisasterRecoveryConfiguration_Get",
+        "description":"Returns information about an Azure SQL Server disaster recovery configurations.",
+        "parameters": [
+          {
+            "name": "serverDisasterRecoveryConfigurationName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Azure SQL server disaster recovery configuration to be retrieved."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ServerDisasterRecoveryConfiguration"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags": [
+          "ServerDisasterRecoveryConfiguration"
+        ],
+        "operationId":"Servers_DisasterRecoveryConfiguration_Delete",
+        "description":"Deletes the Azure SQL server disaster recovery configuration with the given name.",
+        "parameters": [
+          {
+            "name": "serverDisasterRecoveryConfigurationName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Azure SQL server disaster recovery configuration to be deleted."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "204": {
+            "description": ""
+          }
+        }
+      },
+      "put" : {
+        "tags": [
+          "ServerDisasterRecoveryConfiguration"
+        ],
+        "operationId":"Servers_DisasterRecoveryConfiguration_CreateOrUpdate",
+        "description":"Begins creating a new or updating an existing Azure SQL Server disaster recovery configuration. To determine the status of the operation call GetServerDisasterRecoveryConfigurationOperationStatus.",
+        "parameters": [
+          {
+            "name": "serverDisasterRecoveryConfigurationName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Azure SQL server disaster recovery configuration to be retrieved."
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ServerDisasterRecoveryConfigurationCreateOrUpdateParameters"
+            },
+            "description": "The required parameters for creating or updating a Server disaster recovery configuration."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": ""
+          },
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ServerDisasterRecoveryConfiguration"
+            }
+          },
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ServerDisasterRecoveryConfiguration"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/disasterRecoveryConfiguration/{serverDisasterRecoveryConfigurationName}/failover": {
+      "post" : {
+        "tags": [
+          "ServerDisasterRecoveryConfiguration"
+        ],
+        "operationId":"Servers_DisasterRecoveryConfiguration_Failover",
+        "description":"Begins failover for the Azure SQL server disaster recovery configuration with the given name.",
+        "parameters": [
+          {
+            "name": "serverDisasterRecoveryConfigurationName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Azure SQL server disaster recovery configuration to start failover."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/disasterRecoveryConfiguration/{serverDisasterRecoveryConfigurationName}/forceFailoverAllowDataLoss": {
+      "post" : {
+        "tags": [
+          "ServerDisasterRecoveryConfiguration"
+        ],
+        "operationId":"Servers_DisasterRecoveryConfiguration_ForceFailoverAllowDataLoss",
+        "description":"Begins failover for the Azure SQL server disaster recovery configuration with the given name.",
+        "parameters": [
+          {
+            "name": "serverDisasterRecoveryConfigurationName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Azure SQL server disaster recovery configuration to start failover."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupParameter"
+          },
+          {
+            "$ref": "#/parameters/ServerNameParameterGeneric"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+  
+  },
+  "definitions": {
+    "ServerCreateOrUpdateProperties": {
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Gets or sets the version for the server being updated or created."
+        },
+        "administratorLogin": {
+          "type": "string",
+          "description": "Gets or sets the Administrator Login of the server being created."
+        },
+        "administratorLoginPassword": {
+          "type": "string",
+          "description": "Gets or sets the Administrator Login Password of the server being created or updated."
+        }
+      },
+      "description": "Create or update server parameters properties."
+    },
+    "ServerCreateOrUpdateParameters": {
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/ServerCreateOrUpdateProperties",
+          "description": "Gets or sets the properties of the request."
+        }
+      },
+      "required": [
+        "properties"
+      ],
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
+      "description": "Create or update server parameters."
+    },
+    "ServerProperties": {
+      "properties": {
+        "fullyQualifiedDomainName": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the fully qualified domain name of the server."
+        },
+        "version": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the version of the server."
+        },
+        "administratorLogin": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets administrator username for the server."
+        },
+        "administratorLoginPassword": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the administrator login password."
+        }
+      },
+      "description": "Represents the properties of an Azure SQL Server."
+    },
+    "Server": {
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/ServerProperties",
+          "description": "Represents the properties of the resource."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
+      "description": "Represents an Azure SQL Server."
+    },
+    "ServerListResult": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Server"
+          },
+          "description": "Gets or sets the list of Azure SQL Servers."
+        }
+      },
+      "description": "Represents the response to a Get Azure SQL Server request."
+    },
+    "ServerMetric": {
+      "properties": {
+        "resourceName": {
+          "type": "string",
+          "description": "Gets or sets the name of the resource."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Gets or sets the metric display name."
+        },
+        "currentValue": {
+          "type": "number",
+          "format": "double",
+          "description": "Gets or sets the current value of the metric."
+        },
+        "limit": {
+          "type": "number",
+          "format": "double",
+          "description": "Gets or sets the current limit of the metric."
+        },
+        "unit": {
+          "type": "string",
+          "description": "Gets or sets the units of the metric."
+        },
+        "nextResetTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Gets or sets the next reset time for the metric."
+        }
+      },
+      "description": "Represents Azure SQL Server metrics."
+    },
+    "ServerMetricListResult": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServerMetric"
+          },
+          "description": "Gets or sets the list of Azure SQL Server metrics for the server."
+        }
+      },
+      "description": "Represents the response to a List Azure SQL Server metrics request."
+    },
+    "ServerUpgradeGetResult": {
+      "properties": {
+        "status": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the status of the Azure SQL Server Upgrade."
+        },
+        "scheduleUpgradeAfterTime": {
+          "readOnly": true,
+          "type": "string",
+          "format": "date-time",
+          "description": "Gets the schedule time of the Azure SQL Server Upgrade."
+        }
+      },
+      "description": "Represents the response to a Get request for Upgrade status of an Azure SQL Server."
+    },
+    "ServerUpgradeProperties": {
+      "properties": {
+        "Version": {
+          "type": "string",
+          "description": "Gets or sets the version for the Azure SQL Server being upgraded."
+        },
+        "ScheduleUpgradeAfterUtcDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Gets or sets the earliest time to upgrade the Azure SQL Server."
+        },
+        "DatabaseCollection": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RecommendedDatabaseProperties"
+          },
+          "description": "Gets or sets the collection of recommended database properties to upgrade the Azure SQL Server."
+        },
+        "ElasticPoolCollection": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UpgradeRecommendedElasticPoolProperties"
+          },
+          "description": "Gets or sets the collection of recommended elastic pool properties to upgrade the Azure SQL Server."
+        }
+      },
+      "required": [
+        "Version"
+      ],
+      "description": "Start Azure SQL Server Upgrade properties."
+    },
+    "ServerUpgradeStartParameters": {
+      "properties": {
+        "serverUpgradeProperties": {
+          "$ref": "#/definitions/ServerUpgradeProperties",
+          "description": "Gets or sets the properties of the Azure SQL Server Upgrade."
+        }
+      },
+      "required": [
+        "serverUpgradeProperties"
+      ],
+      "description": "Start Azure SQL Server Upgrade parameters."
+    },
+    "ServiceObjectiveProperties": {
+      "properties": {
+        "serviceObjectiveName": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the name for the service objective."
+        },
+        "isDefault": {
+          "readOnly": true,
+          "type": "boolean",
+          "description": "Gets whether the service level objective is the default service objective."
+        },
+        "isSystem": {
+          "readOnly": true,
+          "type": "boolean",
+          "description": "Gets whether the service level objective is a system service objective."
+        },
+        "description": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the description for the service level objective."
+        },
+        "enabled": {
+          "readOnly": true,
+          "type": "boolean",
+          "description": "Gets whether the service level objective is enabled."
+        }
+      },
+      "description": "Represents the properties of an Azure SQL Database Service Objective."
+    },
+    "ServiceObjective": {
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/ServiceObjectiveProperties",
+          "description": "Represents the properties of the resource."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
+      "description": "Represents an Azure SQL Database Service Objective."
+    },
+    "ServiceObjectiveListResult": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServiceObjective"
+          },
+          "description": "Gets or sets the list of Azure Sql Database Service Objectives."
+        }
+      },
+      "description": "Represents the response to a Get Azure Sql Database Service Objectives request."
+    },
+    "ServerDisasterRecoveryConfigurationCreateOrUpdateParameters": {
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/ServerDisasterRecoveryConfigurationCreateOrUpdateProperties",
+          "description": "Gets or sets the properties of the request."
+        }
+      },
+      "required": [
+        "properties"
+      ],
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
+      "description": "Create or update Azure SQL Server disaster recovery configuration parameters."
+    },
+    "ServerDisasterRecoveryConfigurationCreateOrUpdateProperties" : {
+      "properties": {
+        "autoFailover": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Whether or not automatic failover is enabled.",
+        },
+        "failoverPolicy": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The policy for automatically failing over."
+        },
+        "partnerLogicalServerName": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the name of the partner server."
+        },
+        "partnerServerId": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the id path the partner server."
+        },
+        "role": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the role of the server."
+        },
+        "type": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The type of server disaster recovery configuration."
+        },
+      },
+      "description": "Represents the properties of an Azure SQL Server disaster recovery configuration."
+    },
+    "ServerDisasterRecoveryConfiguration" : {
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/ServerDisasterRecoveryConfigurationProperties",
+          "description":"Gets or sets the properties representing the Server Disaster Recovery Configuration."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
+      "description": "Represents a server disaster recovery configuration."
+    },
+    "ServerDisasterRecoveryConfigurationList": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServerDisasterRecoveryConfiguration"
+          },
+          "description": "Gets or sets the list of Azure Sql Server disaster recovery configurations."
+        }
+      },
+      "description": "Represents the response to a List Azure Sql Server disaster recovery configuration request."
+    },
+    "ServerDisasterRecoveryConfigurationProperties" : {
+      "properties": {
+        "autoFailover": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Whether or not automatic failover is enabled.",
+        },
+        "failoverPolicy": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The policy for automatically failing over."
+        },
+        "partnerLogicalServerName": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the name of the partner server."
+        },
+        "partnerServerId": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the id path the partner server."
+        },
+        "role": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Gets the role of the server."
+        },
+        "type": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The type of server disaster recovery configuration."
+        },
+      },
+      "description": "Represents the properties of an Azure SQL Server disaster recovery configuration."
+    },
+  },
+  "parameters": {
+      "name": "serverName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the Azure SQL Server"
+    }
+  }
+}
