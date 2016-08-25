@@ -1,0 +1,1299 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Azure Sql Database API spec",
+        "description": "The Azure SQL Database management API provides a RESTful set of web services that interact with Azure SQL elastic pool services to manage your elastic pools. The API enables users to create, retrieve, update, and delete elastic pools.",
+        "version": "2014-04-01"
+    },
+    "host": "management.azure.com",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/elasticPools/{elasticPoolName}": {
+            "put": {
+                "tags": [
+                    "ElasticPools"
+                ],
+                "operationId": "ElasticPools_CreateOrUpdate",
+                "description": "Creates a new Azure SQL elastic pool or updates an existing Azure SQL elastic pool.",
+                "parameters": [
+                    {
+                        "name": "elasticPoolName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Elastic Pool to be operated on (Updated or created)."
+                    },
+                    {
+                        "name": "parameters",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ElasticPoolCreateOrUpdateParameters"
+                        },
+                        "description": "The required parameters for createing or updating an Elastic Pool."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": ""
+                    },
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ElasticPool"
+                        }
+                    },
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ElasticPool"
+                        }
+                    }
+                },
+                "x-ms-long-running-operation": true
+            },
+            "delete": {
+                "tags": [
+                    "ElasticPools"
+                ],
+                "operationId": "ElasticPools_Delete",
+                "description": "Deletes the Azure SQL elastic pool.",
+                "parameters": [
+                    {
+                        "name": "elasticPoolName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Elastic Pool to be deleted."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "204": {
+                        "description": ""
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "ElasticPools"
+                ],
+                "operationId": "ElasticPools_Get",
+                "description": "Returns information about an Azure SQL elastic pool.",
+                "parameters": [
+                    {
+                        "name": "elasticPoolName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Elastic Pool to be retrieved."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ElasticPool"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/elasticPools/{elasticPoolName}/databases/{databaseName}": {
+            "get": {
+                "tags": [
+                    "ElasticPools"
+                ],
+                "operationId": "ElasticPools_GetDatabases",
+                "description": "Returns information about an Azure SQL database inside of an Azure SQL elastic pool.",
+                "parameters": [
+                    {
+                        "name": "elasticPoolName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Elastic Pool to be retrieved."
+                    },
+                    {
+                        "name": "databaseName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Database to be retrieved."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Database"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/elasticPools": {
+            "get": {
+                "tags": [
+                    "ElasticPools"
+                ],
+                "operationId": "ElasticPools_List",
+                "description": "Returns information about Azure SQL elastic pools.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ElasticPoolListResult"
+                        }
+                    }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/elasticPools/{elasticPoolName}/elasticPoolActivity": {
+            "get": {
+                "tags": [
+                    "ElasticPools"
+                ],
+                "operationId": "ElasticPools_ListActivity",
+                "description": "Returns information about Azure SQL elastic pool activities.",
+                "parameters": [
+                    {
+                        "name": "elasticPoolName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Elastic Pool for which to get the current activity."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ElasticPoolActivityListResult"
+                        }
+                    }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/elasticPools/{elasticPoolName}/elasticPoolDatabaseActivity": {
+            "get": {
+                "tags": [
+                    "ElasticPools"
+                ],
+                "operationId": "ElasticPools_ListDatabaseActivity",
+                "description": "Returns information about activity on Azure SQL databases inside of an Azure SQL elastic pool.",
+                "parameters": [
+                    {
+                        "name": "elasticPoolName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Elastic Pool."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ElasticPoolDatabaseActivityListResult"
+                        }
+                    }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/elasticPools/{elasticPoolName}/databases": {
+            "get": {
+                "tags": [
+                    "ElasticPools"
+                ],
+                "operationId": "ElasticPools_ListDatabases",
+                "description": "Returns information about an Azure SQL database inside of an Azure SQL elastic pool.",
+                "parameters": [
+                    {
+                        "name": "elasticPoolName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Elastic Pool to be retrieved."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/DatabaseListResult"
+                        }
+                    }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ElasticPoolCreateOrUpdateProperties": {
+            "properties": {
+                "edition": {
+                    "type": "string",
+                    "description": "Gets or sets the edition for the Azure SQL Elastic Pool being updated or created."
+                },
+                "dtu": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets or sets the total shared DTU for the Sql Azure Database Elastic Pool.This must agree with the StorageMB if both are specified."
+                },
+                "storageMB": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets or sets storage limit for the Sql Azure Database Elastic Pool in MB.This must agree with the Dtu if both are specified."
+                },
+                "databaseDtuMin": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets or sets the minimum DTU all Sql Azure Databases are guaranteed."
+                },
+                "databaseDtuMax": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the maximum DTU any one Sql Azure Database can consume."
+                }
+            },
+            "description": "Create or update Azure SQL Elastic Pool parameters properties."
+        },
+        "ElasticPoolCreateOrUpdateParameters": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/ElasticPoolCreateOrUpdateProperties",
+                    "description": "Gets or sets the properties of the request.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "required": [
+                "properties"
+            ],
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Create or update Sql Azure Database Elastic Pool parameters."
+        },
+        "ElasticPoolProperties": {
+            "properties": {
+                "creationDate": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the creation date of the Azure SQL Elastic Pool."
+                },
+                "state": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the state of the Azure SQL Elastic Pool."
+                },
+                "edition": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the edition of the Azure SQL Elastic Pool.",
+                    "enum": [
+                        "Basic",
+                        "Standard",
+                        "Premium"
+                    ],
+                    "x-ms-enum": {
+                        "name": "ElasticPoolEditions",
+                        "modelAsString": true
+                    }
+                },
+                "dtu": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the total shared DTU for the Sql Azure Database Elastic Pool."
+                },
+                "databaseDtuMax": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the maximum DTU any one Sql Azure Database can consume."
+                },
+                "databaseDtuMin": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the minimum DTU all Sql Azure Databases are guaranteed."
+                },
+                "storageMB": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets storage limit for the Sql Azure Database Elastic Pool in MB."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Elastic Pool."
+        },
+        "ElasticPool": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/ElasticPoolProperties",
+                    "description": "Gets or sets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Elastic Pool (Elastic Pool)."
+        },
+        "ElasticPoolListResult": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ElasticPool"
+                    },
+                    "description": "Gets or sets the list of Azure Sql Elastic Pools hosted in the server."
+                }
+            },
+            "description": "Represents the response to a List Azure Sql Elastic Pool request."
+        },
+        "ElasticPoolActivityProperties": {
+            "properties": {
+                "endTime": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the time the operation finished."
+                },
+                "errorCode": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the error code if available."
+                },
+                "errorMessage": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the error message if available."
+                },
+                "errorSeverity": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the error severity if available."
+                },
+                "operation": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the operation name."
+                },
+                "operationId": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the unique operation ID."
+                },
+                "percentComplete": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the percentage complete if available."
+                },
+                "requestedDatabaseDtuMax": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the requested max DTU per database if available."
+                },
+                "requestedDatabaseDtuMin": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the requested min DTU per database if available."
+                },
+                "requestedDtu": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the requested DTU for the pool if available."
+                },
+                "requestedElasticPoolName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the requested name for the Elastic Pool if available."
+                },
+                "requestedStorageLimitInGB": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Gets the requested storage limit for the pool in GB if available."
+                },
+                "elasticPoolName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the Elastic Pool."
+                },
+                "serverName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the Azure SQL Server the Elastic Pool is in."
+                },
+                "startTime": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the time the operation started."
+                },
+                "state": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the current state of the operation."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Elastic Pool."
+        },
+        "ElasticPoolActivity": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/ElasticPoolActivityProperties",
+                    "description": "Gets or sets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents the activity on an Azure SQL Elastic Pool."
+        },
+        "ElasticPoolActivityListResult": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ElasticPoolActivity"
+                    },
+                    "description": "Gets or sets the list of Azure Sql Elastic Pool Activities."
+                }
+            },
+            "description": "Represents the response to a List Azure Sql Elastic Pool Activity request."
+        },
+        "ElasticPoolDatabaseActivityProperties": {
+            "properties": {
+                "databaseName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the database name."
+                },
+                "endTime": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the time the operation finished."
+                },
+                "errorCode": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the error code if available."
+                },
+                "errorMessage": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the error message if available."
+                },
+                "errorSeverity": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the error severity if available."
+                },
+                "operation": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the operation name."
+                },
+                "operationId": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the unique operation ID."
+                },
+                "percentComplete": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets the percentage complete if available."
+                },
+                "requestedElasticPoolName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name for the Elastic Pool the database is moving into if available."
+                },
+                "currentElasticPoolName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the current Elastic Pool the database is in if available."
+                },
+                "currentServiceObjective": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the current service objective if available."
+                },
+                "requestedServiceObjective": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the requested service objective if available."
+                },
+                "serverName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the Azure SQL Server the Elastic Pool is in."
+                },
+                "startTime": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the time the operation started."
+                },
+                "state": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the current state of the operation."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Elastic Pool Database Activity."
+        },
+        "ElasticPoolDatabaseActivity": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/ElasticPoolDatabaseActivityProperties",
+                    "description": "Gets or sets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents the activity on an Azure SQL Elastic Pool."
+        },
+        "ElasticPoolDatabaseActivityListResult": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ElasticPoolDatabaseActivity"
+                    },
+                    "description": "Gets or sets the list of Azure Sql Elastic Pool Database Activities."
+                }
+            },
+            "description": "Represents the response to a List Azure Sql Elastic Pool Database Activity request."
+        },
+        "DatabaseListResult": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Database"
+                    },
+                    "description": "Gets or sets the list of Azure Sql Databases housed in the server."
+                }
+            },
+            "description": "Represents the response to a List Azure Sql Database request."
+        },
+        "TableProperties": {
+            "properties": {
+                "tableType": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the type of Azure SQL Database table.",
+                    "enum": [
+                        "BaseTable",
+                        "View"
+                    ],
+                    "x-ms-enum": {
+                        "name": "TableType",
+                        "modelAsString": true
+                    }
+                },
+                "columns": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Column"
+                    },
+                    "description": "Gets the columns from this table."
+                },
+                "recommendedIndexes": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RecommendedIndex"
+                    },
+                    "description": "Gets the recommended indices for this table."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database table."
+        },
+        "Table": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/TableProperties",
+                    "description": "Gets or sets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database table."
+        },
+        "SchemaProperties": {
+            "properties": {
+                "tables": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Table"
+                    },
+                    "description": "Gets the tables from this database."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database schema."
+        },
+        "Schema": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/SchemaProperties",
+                    "description": "Gets or sets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database schema."
+        },
+        "DatabaseProperties": {
+            "properties": {
+                "collation": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the collation of the Azure SQL Database."
+                },
+                "creationDate": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the creation date of the Azure SQL Database."
+                },
+                "currentServiceObjectiveId": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the current Service Level Objective Id of the Azure SQL Database. This is the Id of the Service Level Objective that is currently active."
+                },
+                "databaseId": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the Id of the Azure SQL Database."
+                },
+                "earliestRestoreDate": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the recovery period starte date of the Azure SQL Database. This records the start date and time when recovery is available for this Azure SQL Database."
+                },
+                "edition": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the edition of the Azure SQL Database.  The DatabaseEditions enumeration contains all the valid editions.",
+                    "enum": [
+                        "Web",
+                        "Business",
+                        "Basic",
+                        "Standard",
+                        "Premium",
+                        "Free",
+                        "Stretch",
+                        "DataWarehouse"
+                    ],
+                    "x-ms-enum": {
+                        "name": "DatabaseEditions",
+                        "modelAsString": true
+                    }
+                },
+                "maxSizeBytes": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Gets the max size of the Azure SQL Database expressed in bytes."
+                },
+                "requestedServiceObjectiveId": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the configured Service Level Objective Id of the Azure SQL Database. This is the Service Level Objective that is being applied to the Azure SQL Database."
+                },
+                "requestedServiceObjectiveName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the configured Service Level Objective of the Azure SQL Database. This is the Service Level Objective that is being applied to the Azure SQL Database."
+                },
+                "serviceLevelObjective": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the Service Level Objective of the Azure SQL Database."
+                },
+                "status": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the status of the Azure SQL Database."
+                },
+                "elasticPoolName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the Azure SQL Elastic Pool the database is in."
+                },
+                "serviceTierAdvisors": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ServiceTierAdvisor"
+                    },
+                    "description": "Gets the list of service tier advisors for this database. Expanded property"
+                },
+                "upgradeHint": {
+                    "$ref": "#/definitions/UpgradeHint",
+                    "readOnly": true,
+                    "description": "Gets the upgrade hint for this database."
+                },
+                "schemas": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Schema"
+                    },
+                    "description": "Gets the schemas from this database."
+                },
+                "defaultSecondaryLocation": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the default secondary region for this database."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database."
+        },
+        "Database": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/DatabaseProperties",
+                    "description": "Gets or sets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database."
+        },
+        "ServiceTierAdvisorProperties": {
+            "properties": {
+                "observationPeriodStart": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the observation period start."
+                },
+                "observationPeriodEnd": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the observation period start."
+                },
+                "activeTimeRatio": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets the activeTimeRatio for service tier advisor."
+                },
+                "minDtu": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets minDtu for service tier advisor."
+                },
+                "avgDtu": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets avgDtu for service tier advisor."
+                },
+                "maxDtu": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets maxDtu for service tier advisor."
+                },
+                "maxSizeInGB": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets maxSizeInGB for service tier advisor."
+                },
+                "serviceLevelObjectiveUsageMetrics": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SloUsageMetric"
+                    },
+                    "description": "Gets or sets serviceLevelObjectiveUsageMetrics for the service tier advisor."
+                },
+                "currentServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets currentServiceLevelObjective for service tier advisor."
+                },
+                "currentServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets currentServiceLevelObjectiveId for service tier advisor."
+                },
+                "usageBasedRecommendationServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets usageBasedRecommendationServiceLevelObjective for service tier advisor."
+                },
+                "usageBasedRecommendationServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets usageBasedRecommendationServiceLevelObjectiveId for service tier advisor."
+                },
+                "databaseSizeBasedRecommendationServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjective for service tier advisor."
+                },
+                "databaseSizeBasedRecommendationServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjectiveId for service tier advisor."
+                },
+                "disasterPlanBasedRecommendationServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjective for service tier advisor."
+                },
+                "disasterPlanBasedRecommendationServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjectiveId for service tier advisor."
+                },
+                "overallRecommendationServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets overallRecommendationServiceLevelObjective for service tier advisor."
+                },
+                "overallRecommendationServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets overallRecommendationServiceLevelObjectiveId for service tier advisor."
+                },
+                "confidence": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets confidence for service tier advisor."
+                }
+            },
+            "description": "Represents the properties of a Service Tier Advisor."
+        },
+        "ServiceTierAdvisor": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/ServiceTierAdvisorProperties",
+                    "description": "Gets or sets the properites representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents a Service Tier Advisor."
+        },
+        "SloUsageMetric": {
+            "properties": {
+                "serviceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets serviceLevelObjective for SLO usage metric."
+                },
+                "serviceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets serviceLevelObjectiveId for SLO usage metric."
+                },
+                "inRangeTimeRatio": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets inRangeTimeRatio for SLO usage metric."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents a Slo Usage Metric."
+        },
+        "UpgradeHint": {
+            "properties": {
+                "targetServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets targetServiceLevelObjective for upgrade hint."
+                },
+                "targetServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets targetServiceLevelObjectiveId for upgrade hint."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents a Upgrade Hint."
+        },
+        "ColumnProperties": {
+            "properties": {
+                "columnType": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the type of Azure SQL Database table column."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database table column."
+        },
+        "Column": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/ColumnProperties",
+                    "description": "Gets or sets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database table column."
+        },
+        "RecommendedIndexProperties": {
+            "properties": {
+                "action": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the proposed index action. We suggest user to create missing index, drop unused index or to rebuild already existing index to improve its performance. Possible values are 'Create', 'Drop', 'Rebuild'."
+                },
+                "state": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the state recommendation is in. Current options are: 'Active', 'Pending', 'Executing', 'Verifying', 'Pending Revert', 'Reverting', 'Reverted', 'Ignored', 'Expired', 'Blocked', 'Success'."
+                },
+                "created": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the UTC datetime showing when this resource was created."
+                },
+                "lastModified": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the UTC datetime of when was this resource last changed."
+                },
+                "indexType": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the type of index (CLUSTERED, NONCLUSTERED, COLUMNSTORE, CLUSTERED COLUMNSTORE)"
+                },
+                "schema": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the schema where table to build index over resides"
+                },
+                "table": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the table on which to build index."
+                },
+                "columns": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Columns over which to build index"
+                },
+                "includedColumns": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Gets the list of column names to be included in the index"
+                },
+                "indexScript": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the full build index script"
+                },
+                "estimatedImpact": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/OperationImpact"
+                    },
+                    "description": "Gets the estimated impact of doing recommended index action."
+                },
+                "reportedImpact": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/OperationImpact"
+                    },
+                    "description": "Gets the values reported after index action is complete."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database recommended index."
+        },
+        "RecommendedIndex": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/RecommendedIndexProperties",
+                    "readOnly": true,
+                    "description": "Gets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database recommended index."
+        },
+        "OperationImpact": {
+            "properties": {
+                "name": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the impact dimension."
+                },
+                "unit": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the unit in which estimated impact to dimension is measured."
+                },
+                "changeValueAbsolute": {
+                    "readOnly": true,
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets the absolute impact to dimension."
+                },
+                "changeValueRelative": {
+                    "readOnly": true,
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets the relative impact to dimension (null if not applicable)"
+                }
+            },
+            "description": "Represents impact of an operation, both in absolute and relative terms."
+        },
+        "Resource": {
+            "description": "Resource properties",
+            "properties": {
+                "id": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource Id"
+                },
+                "name": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource name"
+                },
+                "type": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource type"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Resource location"
+                },
+                "tags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Resource tags"
+                }
+            },
+            "required": [
+                "location"
+            ],
+            "x-ms-azure-resource": true
+        },
+        "SubResource": {
+            "description": "Subresource properties",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Resource Id"
+                }
+            },
+            "x-ms-azure-resource": true
+        }
+    },
+    "parameters": {
+        "SubscriptionIdParameter": {
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+        },
+        "ApiVersionParameter": {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Client Api Version."
+        },
+        "ResourceGroupParameter": {
+            "name": "resourceGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Resource Group to which the resource belongs."
+        },
+        "ServerNameParameterGeneric": {
+            "name": "serverName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Azure SQL Server"
+        }
+    }
+}
