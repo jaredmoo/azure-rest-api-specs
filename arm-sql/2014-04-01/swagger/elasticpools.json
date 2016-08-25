@@ -803,7 +803,6 @@
         "DatabaseProperties": {
             "properties": {
                 "collation": {
-                    "readOnly": true,
                     "type": "string",
                     "description": "Gets the collation of the Azure SQL Database."
                 },
@@ -830,7 +829,6 @@
                     "description": "Gets the recovery period starte date of the Azure SQL Database. This records the start date and time when recovery is available for this Azure SQL Database."
                 },
                 "edition": {
-                    "readOnly": true,
                     "type": "string",
                     "description": "Gets the edition of the Azure SQL Database.  The DatabaseEditions enumeration contains all the valid editions.",
                     "enum": [
@@ -849,24 +847,22 @@
                     }
                 },
                 "maxSizeBytes": {
-                    "readOnly": true,
                     "type": "integer",
                     "format": "int64",
                     "description": "Gets the max size of the Azure SQL Database expressed in bytes."
                 },
                 "requestedServiceObjectiveId": {
-                    "readOnly": true,
                     "type": "string",
                     "description": "Gets the configured Service Level Objective Id of the Azure SQL Database. This is the Service Level Objective that is being applied to the Azure SQL Database."
                 },
                 "requestedServiceObjectiveName": {
-                    "readOnly": true,
                     "type": "string",
                     "description": "Gets the name of the configured Service Level Objective of the Azure SQL Database. This is the Service Level Objective that is being applied to the Azure SQL Database."
                 },
                 "serviceLevelObjective": {
                     "readOnly": true,
                     "type": "string",
+                    "format": "uuid",
                     "description": "Gets the Service Level Objective of the Azure SQL Database."
                 },
                 "status": {
@@ -971,10 +967,12 @@
                 },
                 "currentServiceLevelObjective": {
                     "type": "string",
+                    "format": "uuid",
                     "description": "Gets or sets currentServiceLevelObjective for service tier advisor."
                 },
                 "currentServiceLevelObjectiveId": {
                     "type": "string",
+                    "format": "uuid",
                     "description": "Gets or sets currentServiceLevelObjectiveId for service tier advisor."
                 },
                 "usageBasedRecommendationServiceLevelObjective": {
@@ -983,6 +981,7 @@
                 },
                 "usageBasedRecommendationServiceLevelObjectiveId": {
                     "type": "string",
+                    "format": "uuid",
                     "description": "Gets or sets usageBasedRecommendationServiceLevelObjectiveId for service tier advisor."
                 },
                 "databaseSizeBasedRecommendationServiceLevelObjective": {
@@ -991,6 +990,7 @@
                 },
                 "databaseSizeBasedRecommendationServiceLevelObjectiveId": {
                     "type": "string",
+                    "format": "uuid",
                     "description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjectiveId for service tier advisor."
                 },
                 "disasterPlanBasedRecommendationServiceLevelObjective": {
@@ -999,6 +999,7 @@
                 },
                 "disasterPlanBasedRecommendationServiceLevelObjectiveId": {
                     "type": "string",
+                    "format": "uuid",
                     "description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjectiveId for service tier advisor."
                 },
                 "overallRecommendationServiceLevelObjective": {
@@ -1007,6 +1008,7 @@
                 },
                 "overallRecommendationServiceLevelObjectiveId": {
                     "type": "string",
+                    "format": "uuid",
                     "description": "Gets or sets overallRecommendationServiceLevelObjectiveId for service tier advisor."
                 },
                 "confidence": {
@@ -1286,14 +1288,16 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Resource Group to which the resource belongs."
+            "description": "The name of the Resource Group to which the resource belongs.",
+            "x-ms-parameter-location": "method"
         },
         "ServerNameParameterGeneric": {
             "name": "serverName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Server"
+            "description": "The name of the Azure SQL Server",
+            "x-ms-parameter-location": "method"
         }
     }
 }

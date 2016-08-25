@@ -311,14 +311,16 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Resource Group to which the resource belongs."
+            "description": "The name of the Resource Group to which the resource belongs.",
+            "x-ms-parameter-location": "method"
         },
         "ServerNameParameterGeneric": {
             "name": "serverName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Server"
+            "description": "The name of the Azure SQL Server",
+            "x-ms-parameter-location": "method"
         }
     }
 }

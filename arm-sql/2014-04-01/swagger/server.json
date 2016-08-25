@@ -29,7 +29,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ServerCreateOrUpdateParameters"
+                            "$ref": "#/definitions/Server"
                         },
                         "description": "The required parameters for createing or updating a server."
                     },
@@ -255,22 +255,20 @@
                 "fullyQualifiedDomainName": {
                     "readOnly": true,
                     "type": "string",
-                    "description": "Gets the fully qualified domain name of the server."
+                    "description": "The fully qualified domain name of the server."
                 },
                 "version": {
                     "readOnly": true,
                     "type": "string",
-                    "description": "Gets the version of the server."
+                    "description": "The version of the server."
                 },
                 "administratorLogin": {
-                    "readOnly": true,
                     "type": "string",
-                    "description": "Gets administrator username for the server."
+                    "description": "Administrator username for the server. Can only be specified when the server is being created."
                 },
                 "administratorLoginPassword": {
-                    "readOnly": true,
                     "type": "string",
-                    "description": "Gets the administrator login password."
+                    "description": "The administrator login password."
                 }
             },
             "description": "Represents the properties of an Azure SQL Server."
@@ -523,14 +521,16 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Resource Group to which the resource belongs."
+            "description": "The name of the Resource Group to which the resource belongs.",
+            "x-ms-parameter-location": "method"
         },
         "ServerNameParameterGeneric": {
             "name": "serverName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the Azure SQL Server"
+            "description": "The name of the Azure SQL Server",
+            "x-ms-parameter-location": "method"
         }
     }
 }

@@ -4,10 +4,10 @@
     "description": "Composite Swagger for Azure Sql Database Client"
   },
   "documents": [
-    "E:/git/azure-rest-api-specs/arm-sql/2015-05-01/swagger/jobaccount.json",
-    "E:/git/azure-rest-api-specs/arm-sql/2014-04-01/swagger/server.json",
-    "E:/git/azure-rest-api-specs/arm-sql/2014-04-01/swagger/database.json",
-    "E:/git/azure-rest-api-specs/arm-sql/2014-04-01/swagger/elasticPools.json",
-    "E:/git/azure-rest-api-specs/arm-sql/2014-04-01/swagger/serverFirewallRules.json"
+    "c:/git/azure-rest-api-specs/arm-sql/2015-05-01/swagger/jobaccount.json",
+    "c:/git/azure-rest-api-specs/arm-sql/2014-04-01/swagger/server.json",
+    "c:/git/azure-rest-api-specs/arm-sql/2014-04-01/swagger/database.json",
+    "c:/git/azure-rest-api-specs/arm-sql/2014-04-01/swagger/elasticPools.json",
+    "c:/git/azure-rest-api-specs/arm-sql/2014-04-01/swagger/serverFirewallRules.json"
   ]
 }

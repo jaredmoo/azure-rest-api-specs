@@ -176,6 +176,9 @@
           "201": {
             "description": "Successfully created the job account.",
             "schema": { "$ref": "#/definitions/JobAccountResource" }
+          },
+          "202": {
+            "description": "Create or update has been requested."
           }
         },
         "deprecated": false,
