@@ -305,8 +305,7 @@
         "value": {
           "type": "array",
           "items": { "$ref": "#/definitions/JobAccountResource" }
-        },
-        "nextLink": { "type": "string" }
+        }
       },
       "description": "The response to a List Azure SQL Database job account request."
     },
@@ -331,9 +330,11 @@
     "JobAccountResourceProperties": {
       "type": "object",
       "properties": {
-        "databaseId": { "type": "string" },
-        "serviceLevelObjectiveId": { "type": "string" }
+        "databaseId": { "type": "string" }
       },
+      "required": [
+        "databaseId"
+      ],
       "description": "Properties of an Azure SQL Database job account."
     },
     "JobResourceList": {
@@ -342,8 +343,7 @@
         "value": {
           "type": "array",
           "items": { "$ref": "#/definitions/JobResource" }
-        },
-        "nextLink": { "type": "string" }
+        }
       },
       "description": "The response to a List Azure SQL Database job request."
     },
@@ -368,11 +368,11 @@
     "JobResourceProperties": {
       "type": "object",
       "properties": {
-        "versionNumber": { "type": "integer", "default": 0 },
-        "scheduleStartTime": { "type": "string" },
-        "scheduleEndTime": { "type": "string"},
-        "scheduleIntervalType": { "type": "string"},
-        "scheduleIntervalValue": { "type": "integer"},
+        "versionNumber": { "type": "integer", "default":0 },
+        "scheduleStartTime": { "type": "string", "default":"1900-01-01 00:00:00"},
+        "scheduleEndTime": { "type": "string", "default":"9999-12-31 23:59:59"},
+        "scheduleIntervalType": { "type": "string", "default":"Once"},
+        "scheduleIntervalValue": { "type": "integer", "default":1},
         "enabled": { "type": "integer"}
       },
       "description": "Properties of an Azure SQL Database job account."
