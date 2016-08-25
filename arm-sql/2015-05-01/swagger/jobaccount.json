@@ -235,6 +235,63 @@
         "deprecated": false,
         "x-ms-long-running-operation": true
       }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/jobAccounts/{jobAccountName}/jobs": {
+      "get": {
+        "tags": [ "Jobs" ],
+        "description": "Returns information about Azure SQL jobs.",
+        "operationId": "Jobs_List",
+        "consumes": [ ],
+        "produces": [ "application/json", "text/json" ],
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "Subscription ID which uniquely identifies Microsoft Azure subscription.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the Resource Group to which the server belongs.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "serverName",
+            "in": "path",
+            "description": "The name of the Azure SQL Database Server that the Job Accounts are hosted in.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "jobAccountName",
+            "in": "path",
+            "description": "The name of the Azure SQL Database job account that the Jobs are hosted in.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "description": "Client Api Version.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the list of job accounts.",
+            "schema": { "$ref": "#/definitions/JobResourceList" }
+          },
+          "default": {
+            "description": "<b>Error Responses:</b><br/>404 SubscriptionDoesNotHaveServer - The requested server was not found",
+            "schema": { "$ref": "#/definitions/ArmErrorResponseMessage" }
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "definitions": {
@@ -276,6 +333,47 @@
       "properties": {
         "databaseId": { "type": "string" },
         "serviceLevelObjectiveId": { "type": "string" }
+      },
+      "description": "Properties of an Azure SQL Database job account."
+    },
+    "JobResourceList": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/JobResource" }
+        },
+        "nextLink": { "type": "string" }
+      },
+      "description": "The response to a List Azure SQL Database job request."
+    },
+    "JobResource": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "location": { "type": "string" },
+        "tags": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "properties": { 
+          "$ref": "#/definitions/JobResourceProperties",
+          "x-ms-client-flatten":true
+         }
+      },
+      "description": "An Azure SQL Database job account."
+    },
+    "JobResourceProperties": {
+      "type": "object",
+      "properties": {
+        "versionNumber": { "type": "integer", "default": 0 },
+        "scheduleStartTime": { "type": "string" },
+        "scheduleEndTime": { "type": "string"},
+        "scheduleIntervalType": { "type": "string"},
+        "scheduleIntervalValue": { "type": "integer"},
+        "enabled": { "type": "integer"}
       },
       "description": "Properties of an Azure SQL Database job account."
     },
