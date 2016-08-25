@@ -19,12 +19,12 @@
   ],
   "paths": {
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/import": {
-      "post" : {
+      "post": {
         "tags": [
           "ImportExport"
         ],
-        "operationId":"Servers_ImportDatabase",
-        "description":"Imports a bacpac to Azure SQL Database.",
+        "operationId": "Servers_ImportDatabase",
+        "description": "Imports a bacpac to Azure SQL Database.",
         "parameters": [
           {
             "name": "parameters",
@@ -69,12 +69,12 @@
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/extensions/import": {
-      "post" : {
+      "post": {
         "tags": [
           "ImportExport"
         ],
-        "operationId":"Databases_Import",
-        "description":"Imports a bacpac to Azure SQL Database.",
+        "operationId": "Databases_Import",
+        "description": "Imports a bacpac to Azure SQL Database.",
         "parameters": [
           {
             "name": "databaseName",
@@ -126,12 +126,12 @@
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/export": {
-      "post" : {
+      "post": {
         "tags": [
           "ImportExport"
         ],
-        "operationId":"Databases_Export",
-        "description":"Exports a Azure SQL Database to a bacpac.",
+        "operationId": "Databases_Export",
+        "description": "Exports a Azure SQL Database to a bacpac.",
         "parameters": [
           {
             "name": "databaseName",
@@ -183,12 +183,12 @@
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/disasterRecoveryConfiguration": {
-      "get" : {
+      "get": {
         "tags": [
           "ServerDisasterRecoveryConfiguration"
         ],
-        "operationId":"Servers_DisasterRecoveryConfiguration_List",
-        "description":"Returns a list of Azure SQL Server disaster recovery configurations.",
+        "operationId": "Servers_DisasterRecoveryConfiguration_List",
+        "description": "Returns a list of Azure SQL Server disaster recovery configurations.",
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -214,12 +214,12 @@
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/disasterRecoveryConfiguration/{serverDisasterRecoveryConfigurationName}": {
-      "get" : {
+      "get": {
         "tags": [
           "ServerDisasterRecoveryConfiguration"
         ],
-        "operationId":"Servers_DisasterRecoveryConfiguration_Get",
-        "description":"Returns information about an Azure SQL Server disaster recovery configurations.",
+        "operationId": "Servers_DisasterRecoveryConfiguration_Get",
+        "description": "Returns information about an Azure SQL Server disaster recovery configurations.",
         "parameters": [
           {
             "name": "serverDisasterRecoveryConfigurationName",
@@ -250,12 +250,12 @@
           }
         }
       },
-      "delete" : {
+      "delete": {
         "tags": [
           "ServerDisasterRecoveryConfiguration"
         ],
-        "operationId":"Servers_DisasterRecoveryConfiguration_Delete",
-        "description":"Deletes the Azure SQL server disaster recovery configuration with the given name.",
+        "operationId": "Servers_DisasterRecoveryConfiguration_Delete",
+        "description": "Deletes the Azure SQL server disaster recovery configuration with the given name.",
         "parameters": [
           {
             "name": "serverDisasterRecoveryConfigurationName",
@@ -286,12 +286,12 @@
           }
         }
       },
-      "put" : {
+      "put": {
         "tags": [
           "ServerDisasterRecoveryConfiguration"
         ],
-        "operationId":"Servers_DisasterRecoveryConfiguration_CreateOrUpdate",
-        "description":"Begins creating a new or updating an existing Azure SQL Server disaster recovery configuration. To determine the status of the operation call GetServerDisasterRecoveryConfigurationOperationStatus.",
+        "operationId": "Servers_DisasterRecoveryConfiguration_CreateOrUpdate",
+        "description": "Begins creating a new or updating an existing Azure SQL Server disaster recovery configuration. To determine the status of the operation call GetServerDisasterRecoveryConfigurationOperationStatus.",
         "parameters": [
           {
             "name": "serverDisasterRecoveryConfigurationName",
@@ -343,12 +343,12 @@
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/disasterRecoveryConfiguration/{serverDisasterRecoveryConfigurationName}/failover": {
-      "post" : {
+      "post": {
         "tags": [
           "ServerDisasterRecoveryConfiguration"
         ],
-        "operationId":"Servers_DisasterRecoveryConfiguration_Failover",
-        "description":"Begins failover for the Azure SQL server disaster recovery configuration with the given name.",
+        "operationId": "Servers_DisasterRecoveryConfiguration_Failover",
+        "description": "Begins failover for the Azure SQL server disaster recovery configuration with the given name.",
         "parameters": [
           {
             "name": "serverDisasterRecoveryConfigurationName",
@@ -378,12 +378,12 @@
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/disasterRecoveryConfiguration/{serverDisasterRecoveryConfigurationName}/forceFailoverAllowDataLoss": {
-      "post" : {
+      "post": {
         "tags": [
           "ServerDisasterRecoveryConfiguration"
         ],
-        "operationId":"Servers_DisasterRecoveryConfiguration_ForceFailoverAllowDataLoss",
-        "description":"Begins failover for the Azure SQL server disaster recovery configuration with the given name.",
+        "operationId": "Servers_DisasterRecoveryConfiguration_ForceFailoverAllowDataLoss",
+        "description": "Begins failover for the Azure SQL server disaster recovery configuration with the given name.",
         "parameters": [
           {
             "name": "serverDisasterRecoveryConfigurationName",
@@ -413,12 +413,12 @@
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/recoverableDatabases": {
-      "get" : {
+      "get": {
         "tags": [
           "GeoBackup"
         ],
-        "operationId":"DatabaseBackup_ListGeoBackup",
-        "description":"Returns a list of Azure SQL Database geo backups.",
+        "operationId": "DatabaseBackup_ListGeoBackup",
+        "description": "Returns a list of Azure SQL Database geo backups.",
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -444,12 +444,12 @@
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/recoverableDatabases/{databaseName}": {
-      "get" : {
+      "get": {
         "tags": [
           "GeoBackup"
         ],
-        "operationId":"DatabaseBackup_GetGeoBackup",
-        "description":"Returns an Azure SQL Database geo backup.",
+        "operationId": "DatabaseBackup_GetGeoBackup",
+        "description": "Returns an Azure SQL Database geo backup.",
         "parameters": [
           {
             "name": "databaseName",
@@ -482,12 +482,12 @@
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/restorableDroppedDatabases": {
-      "get" : {
+      "get": {
         "tags": [
           "DeletedDatabaseBackup"
         ],
-        "operationId":"DatabaseBackup_ListDeletedDatabaseBackups",
-        "description":"Returns a list of Azure SQL deleted database backups (a resource representing a deleted database that can be restored).",
+        "operationId": "DatabaseBackup_ListDeletedDatabaseBackups",
+        "description": "Returns a list of Azure SQL deleted database backups (a resource representing a deleted database that can be restored).",
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -513,12 +513,12 @@
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/restorableDroppedDatabases/{databaseName}": {
-      "get" : {
+      "get": {
         "tags": [
           "DeletedDatabaseBackup"
         ],
-        "operationId":"DatabaseBackup_GetDeletedDatabaseBackup",
-        "description":"Returns an Azure SQL deleted database backup (a resource representing a deleted database that can be restored).",
+        "operationId": "DatabaseBackup_GetDeletedDatabaseBackup",
+        "description": "Returns an Azure SQL deleted database backup (a resource representing a deleted database that can be restored).",
         "parameters": [
           {
             "name": "databaseName",
@@ -1202,7 +1202,7 @@
         ],
         "operationId": "Databases_GetById",
         "description": "Returns information about an Azure SQL Database.",
-        "parameters": [ 
+        "parameters": [
           {
             "name": "$filter",
             "in": "query",
@@ -1244,7 +1244,7 @@
         ],
         "operationId": "Databases_ListUsages",
         "description": "Returns information about Azure SQL Database usages.",
-        "parameters": [ 
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -1285,7 +1285,7 @@
         ],
         "operationId": "ElasticPools_CreateOrUpdate",
         "description": "Begins creating a new Azure SQL Elastic Pool or updating an existing Azure SQL Elastic Pool. To determine the status of the operation call GetElasticPoolOperationStatus.",
-        "parameters": [ 
+        "parameters": [
           {
             "name": "elasticPoolName",
             "in": "path",
@@ -1534,7 +1534,7 @@
         ],
         "operationId": "ElasticPools_ListDatabaseActivity",
         "description": "Returns information about activity on Azure SQL Databases inside of an Azure SQL Elastic Pool.",
-        "parameters": [ 
+        "parameters": [
           {
             "name": "elasticPoolName",
             "in": "path",
@@ -1575,7 +1575,7 @@
         ],
         "operationId": "ElasticPools_ListDatabases",
         "description": "Returns information about an Azure SQL Database inside of an Azure SQL Elastic Pool.",
-        "parameters": [ 
+        "parameters": [
           {
             "name": "elasticPoolName",
             "in": "path",
@@ -1845,7 +1845,7 @@
         ],
         "operationId": "RecommendedElasticPools_GetDatabases",
         "description": "Returns information about an Azure SQL Database inside of an Azure Sql Recommended Elastic Pool.",
-        "parameters": [ 
+        "parameters": [
           {
             "name": "recommendedElasticPoolName",
             "in": "path",
@@ -2060,7 +2060,7 @@
         ],
         "operationId": "RecommendedIndexes_Update",
         "description": "We execute or cancel index operations by updating index state. Allowed state transitions are :Active          -> Pending          - Start index creation processPending         -> Active           - Cancel index creationActive/Pending  -> Ignored          - Ignore index recommendation so it will no longer show in active recommendationsIgnored         -> Active           - Restore index recommendationSuccess         -> Pending Revert   - Revert index that has been createdPending Revert  -> Revert Canceled  - Cancel index revert operation",
-        "parameters": [ 
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -2216,7 +2216,7 @@
         ],
         "operationId": "DatabaseReplicationLinks_Failover",
         "description": "Begins failover of the Azure SQL Database Replication Link with the given id.",
-        "parameters": [ 
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -2349,7 +2349,7 @@
         ],
         "operationId": "SecureConnection_CreateOrUpdateDatabasePolicy",
         "description": "Creates or updates an Azure SQL Server Firewall rule.",
-        "parameters": [ 
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -2649,7 +2649,7 @@
         ],
         "operationId": "Servers_Delete",
         "description": "Returns information about an Azure SQL Server.",
-        "parameters": [ 
+        "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -2709,7 +2709,7 @@
         ],
         "operationId": "Servers_List",
         "description": "Returns information about an Azure SQL Server.",
-        "parameters": [ 
+        "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
@@ -3080,7 +3080,7 @@
         ],
         "operationId": "TransparentDataEncryption_Get",
         "description": "Returns an Azure SQL Database Transparent Data Encryption Response.",
-        "parameters": [ 
+        "parameters": [
           {
             "name": "databaseName",
             "in": "path",
@@ -3169,7 +3169,7 @@
           "description": "Represents the properties of the resource."
         }
       },
-      "description":"Import Azure SQL Database parameters."
+      "description": "Import Azure SQL Database parameters."
     },
     "ImportExportOperationStatusResponse": {
       "properties": {
@@ -3190,7 +3190,7 @@
           "description": "Gets or sets the type returned from the server."
         }
       },
-      "description":"Response for Azure Sql Import/Export Status operation."
+      "description": "Response for Azure Sql Import/Export Status operation."
     },
     "ImportExportOperationStatusResponseProperties": {
       "properties": {
@@ -3229,7 +3229,7 @@
       },
       "description": "Response for Azure Sql Import/Export Status operation."
     },
-    "ImportRequestParameters" : {
+    "ImportRequestParameters": {
       "properties": {
         "databaseName": {
           "type": "string",
@@ -3255,7 +3255,7 @@
       ],
       "description": "Import Azure SQL Database parameters."
     },
-    "ExportRequestParameters" : {
+    "ExportRequestParameters": {
       "properties": {
         "storageKeyType": {
           "type": "string",
@@ -3597,6 +3597,7 @@
       "description": "Represents the response to a List data masking rules request."
     },
     "ErrorResult": {
+      "description": "Error information",
       "properties": {
         "code": {
           "type": "string",
@@ -4245,7 +4246,7 @@
       ],
       "description": "Create or update Azure SQL Server disaster recovery configuration parameters."
     },
-    "ServerDisasterRecoveryConfigurationCreateOrUpdateProperties" : {
+    "ServerDisasterRecoveryConfigurationCreateOrUpdateProperties": {
       "properties": {
         "autoFailover": {
           "readOnly": true,
@@ -4280,11 +4281,11 @@
       },
       "description": "Represents the properties of an Azure SQL Server disaster recovery configuration."
     },
-    "ServerDisasterRecoveryConfiguration" : {
+    "ServerDisasterRecoveryConfiguration": {
       "properties": {
         "properties": {
           "$ref": "#/definitions/ServerDisasterRecoveryConfigurationProperties",
-          "description":"Gets or sets the properties representing the Server Disaster Recovery Configuration."
+          "description": "Gets or sets the properties representing the Server Disaster Recovery Configuration."
         }
       },
       "allOf": [
@@ -4306,7 +4307,7 @@
       },
       "description": "Represents the response to a List Azure Sql Server disaster recovery configuration request."
     },
-    "ServerDisasterRecoveryConfigurationProperties" : {
+    "ServerDisasterRecoveryConfigurationProperties": {
       "properties": {
         "autoFailover": {
           "readOnly": true,
@@ -4341,11 +4342,11 @@
       },
       "description": "Represents the properties of an Azure SQL Server disaster recovery configuration."
     },
-    "GeoBackup" : {
+    "GeoBackup": {
       "properties": {
         "properties": {
           "$ref": "#/definitions/GeoBackupProperties",
-          "description":"Gets or sets the properties representing the geo backup."
+          "description": "Gets or sets the properties representing the geo backup."
         }
       },
       "allOf": [
@@ -4355,7 +4356,7 @@
       ],
       "description": "Represents an Azure SQL Database geo backup."
     },
-    "GeoBackupProperties" : {
+    "GeoBackupProperties": {
       "properties": {
         "edition": {
           "readOnly": true,
@@ -4393,11 +4394,11 @@
       },
       "description": "Represents the response to a List Azure Sql Database geo backups request."
     },
-    "DeletedDatabaseBackup" : {
+    "DeletedDatabaseBackup": {
       "properties": {
         "properties": {
           "$ref": "#/definitions/DeletedDatabaseBackupProperties",
-          "description":"Gets or sets the object representing a given Azure Sql Database deleted database backup."
+          "description": "Gets or sets the object representing a given Azure Sql Database deleted database backup."
         }
       },
       "allOf": [
@@ -4407,7 +4408,7 @@
       ],
       "description": "Represents an Azure SQL Database restorable deleted database."
     },
-    "DeletedDatabaseBackupProperties" : {
+    "DeletedDatabaseBackupProperties": {
       "properties": {
         "databaseName": {
           "readOnly": true,
@@ -5963,6 +5964,7 @@
       "description": "Represents the response to a List Azure Sql Database Transparent Data Encryption Activity request."
     },
     "Resource": {
+      "description": "Resource properties",
       "properties": {
         "id": {
           "readOnly": true,
@@ -5997,6 +5999,7 @@
       "x-ms-azure-resource": true
     },
     "SubResource": {
+      "description": "Subresource properties",
       "properties": {
         "id": {
           "type": "string",

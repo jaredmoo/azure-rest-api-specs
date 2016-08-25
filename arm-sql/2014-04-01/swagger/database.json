@@ -1,0 +1,1102 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Azure Sql Database API spec",
+        "description": "The Azure SQL Database management API provides a RESTful set of web services that interact with Azure SQL Database services to manage your databases. The API enables users to create, retrieve, update, and delete databases.",
+        "version": "2014-04-01"
+    },
+    "host": "management.azure.com",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/pause": {
+            "post": {
+                "tags": [
+                    "DatabaseActivation"
+                ],
+                "operationId": "Databases_PauseDataWarehouse",
+                "description": "Pause an Azure SQL Data Warehouse database.",
+                "parameters": [
+                    {
+                        "name": "databaseName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Data Warehouse database to pause."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "202": {
+                        "description": ""
+                    }
+                },
+                "x-ms-long-running-operation": true
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/resume": {
+            "post": {
+                "tags": [
+                    "DatabaseActivation"
+                ],
+                "operationId": "Databases_ResumeDataWarehouse",
+                "description": "Resume an Azure SQL Data Warehouse database.",
+                "parameters": [
+                    {
+                        "name": "databaseName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Data Warehouse database to resume."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameter"
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": ""
+                    },
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "x-ms-long-running-operation": true
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/restorePoints": {
+            "get": {
+                "tags": [
+                    "DatabaseBackup"
+                ],
+                "operationId": "Databases_ListRestorePoints",
+                "description": "Returns a list of Azure SQL database restore points.",
+                "parameters": [
+                    {
+                        "name": "databaseName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Database from which to retrieve available restore points."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/RestorePointListResult"
+                        }
+                    }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}": {
+            "put": {
+                "tags": [
+                    "Databases"
+                ],
+                "operationId": "Databases_CreateOrUpdate",
+                "description": "Creates a new Azure SQL database or updates an existing Azure SQL database.",
+                "parameters": [
+                    {
+                        "name": "databaseName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Database to be operated on (Updated or created)."
+                    },
+                    {
+                        "name": "parameters",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DatabaseCreateOrUpdateParameters"
+                        },
+                        "description": "The required parameters for creating or updating a database."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameter"
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": ""
+                    },
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Database"
+                        }
+                    },
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Database"
+                        }
+                    }
+                },
+                "x-ms-long-running-operation": true
+            },
+            "delete": {
+                "tags": [
+                    "Databases"
+                ],
+                "operationId": "Databases_Delete",
+                "description": "Deletes an Azure SQL database.",
+                "parameters": [
+                    {
+                        "name": "databaseName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Database to be deleted."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "204": {
+                        "description": ""
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Databases"
+                ],
+                "operationId": "Databases_Get",
+                "description": "Returns information about an Azure SQL database.",
+                "parameters": [
+                    {
+                        "name": "databaseName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Database to be retrieved."
+                    },
+                    {
+                        "name": "$expand",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "description": "The comma separated list of child objects to expand in the response."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Database"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases": {
+            "get": {
+                "tags": [
+                    "Databases"
+                ],
+                "operationId": "Databases_List",
+                "description": "Returns information about an Azure SQL Database.",
+                "parameters": [
+                    {
+                        "name": "$filter",
+                        "in": "query",
+                        "required": false,
+                        "type": "string",
+                        "description": "The filter to apply on the operation."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/DatabaseListResult"
+                        }
+                    }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
+                },
+                "x-ms-odata": "#/definitions/Database"
+            }
+        }
+    },
+    "definitions": {
+        "DatabaseCreateOrUpdateProperties": {
+            "properties": {
+                "edition": {
+                    "type": "string",
+                    "description": "Gets or sets the edition for the Azure Sql Database being updated or created."
+                },
+                "collation": {
+                    "type": "string",
+                    "description": "Gets or sets the collation of the Azure Sql Database being created.  You cannot change change the collation of an existing Azure Sql Database."
+                },
+                "maxSizeBytes": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Gets or sets the maximum size of the Azure Sql Database being created or updated in bytes."
+                },
+                "requestedServiceObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets the service objective to be applied to the Azure Sql Database being created or updated."
+                },
+                "requestedServiceObjectiveName": {
+                    "type": "string",
+                    "description": "Gets or sets the service objective to be applied to the Azure Sql Database being created or updated."
+                },
+                "elasticPoolName": {
+                    "type": "string",
+                    "description": "Gets or sets the name of the Elastic Pool to put the Azure Sql Database in."
+                },
+                "sourceDatabaseId": {
+                    "type": "string",
+                    "description": "Gets or sets the resource id of the database to use as the source for the copy being created."
+                },
+                "createMode": {
+                    "type": "string",
+                    "description": "Gets or sets the create Mode for the Azure Sql Database database being created.",
+                    "enum": [
+                        "Default",
+                        "Copy",
+                        "Secondary",
+                        "NonReadableSecondary"
+                    ],
+                    "x-ms-enum": {
+                        "name": "DatabaseCreateMode",
+                        "modelAsString": true
+                    }
+                }
+            },
+            "description": "Create or update Azure Sql Database parameters properties."
+        },
+        "DatabaseCreateOrUpdateParameters": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/DatabaseCreateOrUpdateProperties",
+                    "description": "Gets or sets the properties of the request.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "required": [
+                "properties"
+            ],
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Create or update Sql Azure Database parameters."
+        },
+        "DatabaseProperties": {
+            "properties": {
+                "collation": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the collation of the Azure SQL Database."
+                },
+                "creationDate": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the creation date of the Azure SQL Database."
+                },
+                "currentServiceObjectiveId": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the current Service Level Objective Id of the Azure SQL Database. This is the Id of the Service Level Objective that is currently active."
+                },
+                "databaseId": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the Id of the Azure SQL Database."
+                },
+                "earliestRestoreDate": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the recovery period starte date of the Azure SQL Database. This records the start date and time when recovery is available for this Azure SQL Database."
+                },
+                "edition": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the edition of the Azure SQL Database.  The DatabaseEditions enumeration contains all the valid editions.",
+                    "enum": [
+                        "Web",
+                        "Business",
+                        "Basic",
+                        "Standard",
+                        "Premium",
+                        "Free",
+                        "Stretch",
+                        "DataWarehouse"
+                    ],
+                    "x-ms-enum": {
+                        "name": "DatabaseEditions",
+                        "modelAsString": true
+                    }
+                },
+                "maxSizeBytes": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Gets the max size of the Azure SQL Database expressed in bytes."
+                },
+                "requestedServiceObjectiveId": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the configured Service Level Objective Id of the Azure SQL Database. This is the Service Level Objective that is being applied to the Azure SQL Database."
+                },
+                "requestedServiceObjectiveName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the configured Service Level Objective of the Azure SQL Database. This is the Service Level Objective that is being applied to the Azure SQL Database."
+                },
+                "serviceLevelObjective": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the Service Level Objective of the Azure SQL Database."
+                },
+                "status": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the status of the Azure SQL Database."
+                },
+                "elasticPoolName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the Azure SQL Elastic Pool the database is in."
+                },
+                "serviceTierAdvisors": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ServiceTierAdvisor"
+                    },
+                    "description": "Gets the list of service tier advisors for this database. Expanded property"
+                },
+                "upgradeHint": {
+                    "$ref": "#/definitions/UpgradeHint",
+                    "readOnly": true,
+                    "description": "Gets the upgrade hint for this database."
+                },
+                "schemas": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Schema"
+                    },
+                    "description": "Gets the schemas from this database."
+                },
+                "defaultSecondaryLocation": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the default secondary region for this database."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database."
+        },
+        "Database": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/DatabaseProperties",
+                    "description": "Gets or sets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database."
+        },
+        "DeletedDatabaseBackup": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/DeletedDatabaseBackupProperties",
+                    "description": "Gets or sets the object representing a given Azure Sql Database deleted database backup.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database restorable deleted database."
+        },
+        "DeletedDatabaseBackupProperties": {
+            "properties": {
+                "databaseName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the Azure SQL Database name."
+                },
+                "creationDate": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the creation date of the Azure SQL Database."
+                },
+                "deletionDate": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the deletion date of the Azure SQL Database."
+                },
+                "earliestRestoreDate": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the recovery period starte date of the Azure SQL Database. This records the start date and time when recovery is available for this Azure SQL Database."
+                },
+                "edition": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the edition of the Azure SQL Database."
+                },
+                "maxSizeBytes": {
+                    "readOnly": true,
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Gets the max size of the Azure SQL Database expressed in bytes."
+                },
+                "serviceLevelObjective": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the Service Level Objective of the Azure SQL Database."
+                },
+                "elasticPoolName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the Azure SQL Elastic Pool the database is in."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database restorable deleted database."
+        },
+        "DeletedDatabaseBackupList": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DeletedDatabaseBackup"
+                    },
+                    "description": "Gets or sets the list of a given Azure Sql Database deleted database backups."
+                }
+            },
+            "description": "Represents the response to a List Azure Sql Database deleted database backups request."
+        },
+        "DatabaseListResult": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Database"
+                    },
+                    "description": "Gets or sets the list of Azure Sql Databases housed in the server."
+                }
+            },
+            "description": "Represents the response to a List Azure Sql Database request."
+        },
+        "ServiceTierAdvisorProperties": {
+            "properties": {
+                "observationPeriodStart": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the observation period start."
+                },
+                "observationPeriodEnd": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the observation period start."
+                },
+                "activeTimeRatio": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets the activeTimeRatio for service tier advisor."
+                },
+                "minDtu": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets minDtu for service tier advisor."
+                },
+                "avgDtu": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets avgDtu for service tier advisor."
+                },
+                "maxDtu": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets maxDtu for service tier advisor."
+                },
+                "maxSizeInGB": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets maxSizeInGB for service tier advisor."
+                },
+                "serviceLevelObjectiveUsageMetrics": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SloUsageMetric"
+                    },
+                    "description": "Gets or sets serviceLevelObjectiveUsageMetrics for the service tier advisor."
+                },
+                "currentServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets currentServiceLevelObjective for service tier advisor."
+                },
+                "currentServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets currentServiceLevelObjectiveId for service tier advisor."
+                },
+                "usageBasedRecommendationServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets usageBasedRecommendationServiceLevelObjective for service tier advisor."
+                },
+                "usageBasedRecommendationServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets usageBasedRecommendationServiceLevelObjectiveId for service tier advisor."
+                },
+                "databaseSizeBasedRecommendationServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjective for service tier advisor."
+                },
+                "databaseSizeBasedRecommendationServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets databaseSizeBasedRecommendationServiceLevelObjectiveId for service tier advisor."
+                },
+                "disasterPlanBasedRecommendationServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjective for service tier advisor."
+                },
+                "disasterPlanBasedRecommendationServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets disasterPlanBasedRecommendationServiceLevelObjectiveId for service tier advisor."
+                },
+                "overallRecommendationServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets overallRecommendationServiceLevelObjective for service tier advisor."
+                },
+                "overallRecommendationServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets overallRecommendationServiceLevelObjectiveId for service tier advisor."
+                },
+                "confidence": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets confidence for service tier advisor."
+                }
+            },
+            "description": "Represents the properties of a Service Tier Advisor."
+        },
+        "ServiceTierAdvisor": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/ServiceTierAdvisorProperties",
+                    "description": "Gets or sets the properites representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents a Service Tier Advisor."
+        },
+        "SloUsageMetric": {
+            "properties": {
+                "serviceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets serviceLevelObjective for SLO usage metric."
+                },
+                "serviceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets serviceLevelObjectiveId for SLO usage metric."
+                },
+                "inRangeTimeRatio": {
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets or sets inRangeTimeRatio for SLO usage metric."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents a Slo Usage Metric."
+        },
+        "UpgradeHint": {
+            "properties": {
+                "targetServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets targetServiceLevelObjective for upgrade hint."
+                },
+                "targetServiceLevelObjectiveId": {
+                    "type": "string",
+                    "description": "Gets or sets targetServiceLevelObjectiveId for upgrade hint."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents a Upgrade Hint."
+        },
+        "TableProperties": {
+            "properties": {
+                "tableType": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the type of Azure SQL Database table.",
+                    "enum": [
+                        "BaseTable",
+                        "View"
+                    ],
+                    "x-ms-enum": {
+                        "name": "TableType",
+                        "modelAsString": true
+                    }
+                },
+                "columns": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Column"
+                    },
+                    "description": "Gets the columns from this table."
+                },
+                "recommendedIndexes": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RecommendedIndex"
+                    },
+                    "description": "Gets the recommended indices for this table."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database table."
+        },
+        "ColumnProperties": {
+            "properties": {
+                "columnType": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the type of Azure SQL Database table column."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database table column."
+        },
+        "OperationImpact": {
+            "properties": {
+                "name": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the name of the impact dimension."
+                },
+                "unit": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the unit in which estimated impact to dimension is measured."
+                },
+                "changeValueAbsolute": {
+                    "readOnly": true,
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets the absolute impact to dimension."
+                },
+                "changeValueRelative": {
+                    "readOnly": true,
+                    "type": "number",
+                    "format": "double",
+                    "description": "Gets the relative impact to dimension (null if not applicable)"
+                }
+            },
+            "description": "Represents impact of an operation, both in absolute and relative terms."
+        },
+        "RecommendedIndexProperties": {
+            "properties": {
+                "action": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the proposed index action. We suggest user to create missing index, drop unused index or to rebuild already existing index to improve its performance. Possible values are 'Create', 'Drop', 'Rebuild'."
+                },
+                "state": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the state recommendation is in. Current options are: 'Active', 'Pending', 'Executing', 'Verifying', 'Pending Revert', 'Reverting', 'Reverted', 'Ignored', 'Expired', 'Blocked', 'Success'."
+                },
+                "created": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the UTC datetime showing when this resource was created."
+                },
+                "lastModified": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the UTC datetime of when was this resource last changed."
+                },
+                "indexType": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the type of index (CLUSTERED, NONCLUSTERED, COLUMNSTORE, CLUSTERED COLUMNSTORE)"
+                },
+                "schema": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the schema where table to build index over resides"
+                },
+                "table": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the table on which to build index."
+                },
+                "columns": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Columns over which to build index"
+                },
+                "includedColumns": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Gets the list of column names to be included in the index"
+                },
+                "indexScript": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the full build index script"
+                },
+                "estimatedImpact": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/OperationImpact"
+                    },
+                    "description": "Gets the estimated impact of doing recommended index action."
+                },
+                "reportedImpact": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/OperationImpact"
+                    },
+                    "description": "Gets the values reported after index action is complete."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database recommended index."
+        },
+        "RecommendedIndex": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/RecommendedIndexProperties",
+                    "readOnly": true,
+                    "description": "Gets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database recommended index."
+        },
+        "Column": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/ColumnProperties",
+                    "description": "Gets or sets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database table column."
+        },
+        "Table": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/TableProperties",
+                    "description": "Gets or sets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database table."
+        },
+        "SchemaProperties": {
+            "properties": {
+                "tables": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Table"
+                    },
+                    "description": "Gets the tables from this database."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database schema."
+        },
+        "Schema": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/SchemaProperties",
+                    "description": "Gets or sets the properties representing the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database schema."
+        },
+        "RestorePointProperties": {
+            "properties": {
+                "restorePointType": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the restore point type of the Azure SQL Database restore point.",
+                    "enum": [
+                        "DISCRETE",
+                        "CONTINUOUS"
+                    ],
+                    "x-ms-enum": {
+                        "name": "RestorePointTypes",
+                        "modelAsString": true
+                    }
+                },
+                "restorePointCreationDate": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Restore point creation time. Populated when restorePointType = CONTINUOUS. Null otherwise."
+                },
+                "earliestRestoreDate": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Earliest restore time. Populated when restorePointType = DISCRETE. Null otherwise."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Database restore point."
+        },
+        "RestorePoint": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/RestorePointProperties",
+                    "description": "Gets or sets the properties representing the restore point.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Database restore point."
+        },
+        "RestorePointListResult": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RestorePoint"
+                    },
+                    "description": "Gets or sets the list of a given Azure Sql Database restore points."
+                }
+            },
+            "description": "Represents the response to a List Azure Sql Database restore points request."
+        },
+        "Resource": {
+            "description": "Resource properties",
+            "properties": {
+                "id": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource Id"
+                },
+                "name": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource name"
+                },
+                "type": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource type"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Resource location"
+                },
+                "tags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Resource tags"
+                }
+            },
+            "required": [
+                "location"
+            ],
+            "x-ms-azure-resource": true
+        },
+        "SubResource": {
+            "description": "Subresource properties",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Resource Id"
+                }
+            },
+            "x-ms-azure-resource": true
+        }
+    },
+    "parameters": {
+        "SubscriptionIdParameter": {
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+        },
+        "ApiVersionParameter": {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Client Api Version."
+        },
+        "ResourceGroupParameter": {
+            "name": "resourceGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Resource Group to which the resource belongs."
+        },
+        "ServerNameParameter": {
+            "name": "serverName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Azure SQL Server on which the Azure SQL Database is hosted."
+        }
+    }
+}

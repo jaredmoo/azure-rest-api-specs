@@ -1,0 +1,536 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "API definition for Azure Sql Servers.",
+        "description": "The Azure SQL Server management API provides a RESTful set of web services that interact with Azure SQL servers services to manage your servers. The API enables users to create, retrieve, update, and delete servers.",
+        "version": "2014-04-01"
+    },
+    "host": "management.azure.com",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}": {
+            "put": {
+                "tags": [
+                    "Servers"
+                ],
+                "operationId": "Servers_CreateOrUpdate",
+                "description": "Creates a new Azure SQL Server.",
+                "parameters": [
+                    {
+                        "name": "parameters",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ServerCreateOrUpdateParameters"
+                        },
+                        "description": "The required parameters for createing or updating a server."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Server"
+                        }
+                    },
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Server"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Servers"
+                ],
+                "operationId": "Servers_Delete",
+                "description": "Returns information about an Azure SQL Server.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "204": {
+                        "description": ""
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Servers"
+                ],
+                "operationId": "Servers_Get",
+                "description": "Returns information about an Azure SQL Server.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Server"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers": {
+            "get": {
+                "tags": [
+                    "Servers"
+                ],
+                "operationId": "Servers_List",
+                "description": "Returns information about an Azure SQL Server.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ServerListResult"
+                        }
+                    }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/operationResults/versionUpgrade": {
+            "delete": {
+                "tags": [
+                    "ServerUpgrades"
+                ],
+                "operationId": "Servers_CancelUpgrade",
+                "description": "Cancel a pending upgrade for the Azure SQL Server.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": ""
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "ServerUpgrades"
+                ],
+                "operationId": "Servers_GetUpgradeResult",
+                "description": "Returns information about Upgrade status of an Azure SQL Server.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ServerUpgradeGetResult"
+                        }
+                    },
+                    "202": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/upgrade": {
+            "post": {
+                "tags": [
+                    "ServerUpgrades"
+                ],
+                "operationId": "Servers_StartUpgrade",
+                "description": "Start an Azure SQL Server Upgrade.",
+                "parameters": [
+                    {
+                        "name": "parameters",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ServerUpgradeStartParameters"
+                        },
+                        "description": "The required parameters for the Azure SQL Server Upgrade."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameterGeneric"
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ServerProperties": {
+            "properties": {
+                "fullyQualifiedDomainName": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the fully qualified domain name of the server."
+                },
+                "version": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the version of the server."
+                },
+                "administratorLogin": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets administrator username for the server."
+                },
+                "administratorLoginPassword": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the administrator login password."
+                }
+            },
+            "description": "Represents the properties of an Azure SQL Server."
+        },
+        "Server": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/ServerProperties",
+                    "description": "Represents the properties of the resource.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Represents an Azure SQL Server."
+        },
+        "RecommendedDatabaseProperties": {
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Gets or sets the name of the Azure SQL Database being upgraded."
+                },
+                "TargetEdition": {
+                    "type": "string",
+                    "description": "Gets or sets the target edition for the Azure SQL Database being upgraded."
+                },
+                "TargetServiceLevelObjective": {
+                    "type": "string",
+                    "description": "Gets or sets the target Service Level Objective for the Azure SQL Database being upgraded."
+                }
+            },
+            "description": "Represents the properties of a recommended Azure SQL Database being upgraded."
+        },
+        "ServerListResult": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Server"
+                    },
+                    "description": "Gets or sets the list of Azure SQL Servers."
+                }
+            },
+            "description": "Represents the response to a Get Azure SQL Server request."
+        },
+        "ServerUpgradeGetResult": {
+            "properties": {
+                "status": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Gets the status of the Azure SQL Server Upgrade."
+                },
+                "scheduleUpgradeAfterTime": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets the schedule time of the Azure SQL Server Upgrade."
+                }
+            },
+            "description": "Represents the response to a Get request for Upgrade status of an Azure SQL Server."
+        },
+        "ServerUpgradeProperties": {
+            "properties": {
+                "Version": {
+                    "type": "string",
+                    "description": "Gets or sets the version for the Azure SQL Server being upgraded."
+                },
+                "ScheduleUpgradeAfterUtcDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Gets or sets the earliest time to upgrade the Azure SQL Server."
+                },
+                "DatabaseCollection": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RecommendedDatabaseProperties"
+                    },
+                    "description": "Gets or sets the collection of recommended database properties to upgrade the Azure SQL Server."
+                },
+                "ElasticPoolCollection": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/UpgradeRecommendedElasticPoolProperties"
+                    },
+                    "description": "Gets or sets the collection of recommended elastic pool properties to upgrade the Azure SQL Server."
+                }
+            },
+            "required": [
+                "Version"
+            ],
+            "description": "Start Azure SQL Server Upgrade properties."
+        },
+        "ServerUpgradeStartParameters": {
+            "properties": {
+                "serverUpgradeProperties": {
+                    "$ref": "#/definitions/ServerUpgradeProperties",
+                    "description": "Gets or sets the properties of the Azure SQL Server Upgrade."
+                }
+            },
+            "required": [
+                "serverUpgradeProperties"
+            ],
+            "description": "Start Azure SQL Server Upgrade parameters."
+        },
+        "UpgradeRecommendedElasticPoolProperties": {
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Gets or sets the name of the Azure SQL Recommended Elastic Pool being upgraded."
+                },
+                "Edition": {
+                    "type": "string",
+                    "description": "Gets or sets the target edition for the Azure SQL Recommended Elastic Pool being upgraded."
+                },
+                "Dtu": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets or sets the DTU guarantee for the Azure SQL Recommended Elastic Pool being upgraded."
+                },
+                "StorageMb": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets or sets the storage limit in MB for the Azure SQL Recommended Elastic Pool being upgraded."
+                },
+                "DatabaseDtuMin": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets or sets the DTU guarantee for database for the Azure SQL Recommended Elastic Pool being upgraded."
+                },
+                "DatabaseDtuMax": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Gets or sets the DTU cap for database for the Azure SQL Recommended Elastic Pool being upgraded."
+                },
+                "DatabaseCollection": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Gets or sets the list of database names to be put in the Azure SQL Recommended Elastic Pool being upgraded."
+                },
+                "IncludeAllDatabases": {
+                    "type": "boolean",
+                    "description": "Gets or sets whether all databases to be put in the Azure SQL Recommended Elastic Pool being upgraded."
+                }
+            },
+            "description": "Represents the properties of a Azure SQL Recommended Elastic Pool being upgraded."
+        },
+        "ServerCreateOrUpdateProperties": {
+            "properties": {
+                "version": {
+                    "type": "string",
+                    "description": "Gets or sets the version for the server being updated or created."
+                },
+                "administratorLogin": {
+                    "type": "string",
+                    "description": "Gets or sets the Administrator Login of the server being created."
+                },
+                "administratorLoginPassword": {
+                    "type": "string",
+                    "description": "Gets or sets the Administrator Login Password of the server being created or updated."
+                }
+            },
+            "description": "Create or update server parameters properties."
+        },
+        "ServerCreateOrUpdateParameters": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/ServerCreateOrUpdateProperties",
+                    "description": "Gets or sets the properties of the request.",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "required": [
+                "properties"
+            ],
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Create or update server parameters."
+        },
+        "Resource": {
+            "description": "Resource properties",
+            "properties": {
+                "id": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource Id"
+                },
+                "name": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource name"
+                },
+                "type": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource type"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Resource location"
+                },
+                "tags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Resource tags"
+                }
+            },
+            "required": [
+                "location"
+            ],
+            "x-ms-azure-resource": true
+        },
+        "SubResource": {
+            "description": "Subresource properties",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Resource Id"
+                }
+            },
+            "x-ms-azure-resource": true
+        }
+    },
+    "parameters": {
+        "SubscriptionIdParameter": {
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+        },
+        "ApiVersionParameter": {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Client Api Version."
+        },
+        "ResourceGroupParameter": {
+            "name": "resourceGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Resource Group to which the resource belongs."
+        },
+        "ServerNameParameterGeneric": {
+            "name": "serverName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Azure SQL Server"
+        }
+    }
+}
