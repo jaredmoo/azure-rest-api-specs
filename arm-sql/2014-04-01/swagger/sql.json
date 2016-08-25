@@ -3188,7 +3188,7 @@
         "type": {
           "type": "string",
           "description": "Gets or sets the type returned from the server."
-        },
+        }
       },
       "description":"Response for Azure Sql Import/Export Status operation."
     },
@@ -3246,7 +3246,7 @@
         "maxSizeBytes": {
           "type": "string",
           "description": "Gets or sets the maximum size for the newly imported database."
-        },
+        }
       },
       "allOf": [
         {
@@ -3280,7 +3280,7 @@
         "authenticationType": {
           "type": "string",
           "description": "Gets or sets the authentication type."
-        },
+        }
       },
       "description": "Export Azure SQL Database parameters."
     },
@@ -3628,7 +3628,7 @@
           ],
           "x-ms-enum": {
             "name": "RestorePointTypes",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "restorePointCreationDate": {
@@ -3714,7 +3714,7 @@
           ],
           "x-ms-enum": {
             "name": "DatabaseCreateMode",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         }
       },
@@ -4043,7 +4043,7 @@
           ],
           "x-ms-enum": {
             "name": "TableType",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "columns": {
@@ -4151,7 +4151,7 @@
           ],
           "x-ms-enum": {
             "name": "DatabaseEditions",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "maxSizeBytes": {
@@ -4250,7 +4250,7 @@
         "autoFailover": {
           "readOnly": true,
           "type": "string",
-          "description": "Whether or not automatic failover is enabled.",
+          "description": "Whether or not automatic failover is enabled."
         },
         "failoverPolicy": {
           "readOnly": true,
@@ -4276,7 +4276,7 @@
           "readOnly": true,
           "type": "string",
           "description": "The type of server disaster recovery configuration."
-        },
+        }
       },
       "description": "Represents the properties of an Azure SQL Server disaster recovery configuration."
     },
@@ -4311,7 +4311,7 @@
         "autoFailover": {
           "readOnly": true,
           "type": "string",
-          "description": "Whether or not automatic failover is enabled.",
+          "description": "Whether or not automatic failover is enabled."
         },
         "failoverPolicy": {
           "readOnly": true,
@@ -4337,7 +4337,7 @@
           "readOnly": true,
           "type": "string",
           "description": "The type of server disaster recovery configuration."
-        },
+        }
       },
       "description": "Represents the properties of an Azure SQL Server disaster recovery configuration."
     },
@@ -4360,7 +4360,7 @@
         "edition": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the edition of the Azure SQL Database.",
+          "description": "Gets the edition of the Azure SQL Database."
         },
         "serviceLevelObjective": {
           "readOnly": true,
@@ -4377,7 +4377,7 @@
           "type": "string",
           "format": "date-time",
           "description": "Gets the last available backup date."
-        },
+        }
       },
       "description": "Represents an Azure SQL Database geo backup."
     },
@@ -4435,7 +4435,7 @@
         "edition": {
           "readOnly": true,
           "type": "string",
-          "description": "Gets the edition of the Azure SQL Database.",
+          "description": "Gets the edition of the Azure SQL Database."
         },
         "maxSizeBytes": {
           "readOnly": true,
@@ -4595,7 +4595,7 @@
           ],
           "x-ms-enum": {
             "name": "DatabaseEditions",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "dtu": {
@@ -4968,7 +4968,7 @@
           ],
           "x-ms-enum": {
             "name": "MaxSizeUnits",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "status": {
@@ -4982,7 +4982,7 @@
           ],
           "x-ms-enum": {
             "name": "CapabilityStatus",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         }
       },
@@ -5006,7 +5006,7 @@
           ],
           "x-ms-enum": {
             "name": "CapabilityStatus",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "id": {
@@ -5043,7 +5043,7 @@
           ],
           "x-ms-enum": {
             "name": "CapabilityStatus",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "supportedServiceLevelObjectives": {
@@ -5075,7 +5075,7 @@
           ],
           "x-ms-enum": {
             "name": "CapabilityStatus",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "supportedEditions": {
@@ -5107,7 +5107,7 @@
           ],
           "x-ms-enum": {
             "name": "CapabilityStatus",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "supportedServerVersions": {
@@ -5157,7 +5157,7 @@
           ],
           "x-ms-enum": {
             "name": "DatabaseEditions",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "dtu": {
@@ -5316,7 +5316,7 @@
           ],
           "x-ms-enum": {
             "name": "ReplicationRole",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "partnerRole": {
@@ -5332,7 +5332,7 @@
           ],
           "x-ms-enum": {
             "name": "ReplicationRole",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "startTime": {
@@ -5358,7 +5358,7 @@
           ],
           "x-ms-enum": {
             "name": "ReplicationState",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         }
       },
@@ -5892,7 +5892,7 @@
           ],
           "x-ms-enum": {
             "name": "TransparentDataEncryptionStates",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         }
       },
@@ -5924,7 +5924,7 @@
           ],
           "x-ms-enum": {
             "name": "TransparentDataEncryptionActivityStates",
-            "modelAsString": "True"
+            "modelAsString": true
           }
         },
         "percentComplete": {
