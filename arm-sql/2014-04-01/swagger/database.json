@@ -312,6 +312,92 @@
                 },
                 "x-ms-odata": "#/definitions/Database"
             }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/elasticPools/{elasticPoolName}/databases/{databaseName}": {
+            "get": {
+                "tags": [
+                    "ElasticPools"
+                ],
+                "operationId": "ElasticPools_GetDatabases",
+                "description": "Returns information about an Azure SQL database inside of an Azure SQL elastic pool.",
+                "parameters": [
+                    {
+                        "name": "elasticPoolName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Elastic Pool to be retrieved."
+                    },
+                    {
+                        "name": "databaseName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Database to be retrieved."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Database"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/elasticPools/{elasticPoolName}/databases": {
+            "get": {
+                "tags": [
+                    "ElasticPools"
+                ],
+                "operationId": "ElasticPools_ListDatabases",
+                "description": "Returns information about an Azure SQL database inside of an Azure SQL elastic pool.",
+                "parameters": [
+                    {
+                        "name": "elasticPoolName",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "The name of the Azure SQL Elastic Pool to be retrieved."
+                    },
+                    {
+                        "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ServerNameParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/DatabaseListResult"
+                        }
+                    }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
+                }
+            }
         }
     },
     "definitions": {
@@ -332,6 +418,7 @@
                 },
                 "requestedServiceObjectiveId": {
                     "type": "string",
+                    "format":"uuid",
                     "description": "Gets or sets the service objective to be applied to the Azure Sql Database being created or updated."
                 },
                 "requestedServiceObjectiveName": {
@@ -396,6 +483,7 @@
                 "currentServiceObjectiveId": {
                     "readOnly": true,
                     "type": "string",
+                    "format":"uuid",
                     "description": "Gets the current Service Level Objective Id of the Azure SQL Database. This is the Id of the Service Level Objective that is currently active."
                 },
                 "databaseId": {
@@ -434,6 +522,7 @@
                 },
                 "requestedServiceObjectiveId": {
                     "type": "string",
+                    "format":"uuid",
                     "description": "Gets the configured Service Level Objective Id of the Azure SQL Database. This is the Service Level Objective that is being applied to the Azure SQL Database."
                 },
                 "requestedServiceObjectiveName": {
