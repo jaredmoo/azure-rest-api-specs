@@ -8,7 +8,7 @@ This is the AutoRest configuration file for Sql.
 
 ---
 ## Getting Started
-To build the SDK for Sql, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
+To build the SDK for Sql, simply [Install AutoRest'](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
 
@@ -125,31 +125,35 @@ python:
 
 ``` yaml
 directive:
-  - where: $..paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/backupLongTermRetentionVaults/{backupLongTermRetentionVaultName}"]
-    suppress: TrackedResourceListByImmediateParent
+  - where: $..paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/backupLongTermRetentionVaults/{backupLongTermRetentionVaultName}']
+    suppress: R3010
     reason: This is singleton proxy resource that intentionally does not have a list by parent operation.
 
-  - where: $..paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/connectionPolicies/{connectionPolicyName}"]
-    suppress: TrackedResourceListByImmediateParent
+  - where: $..paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/backupLongTermRetentionPolicies/{backupLongTermRetentionPolicyName}']
+    suppress: R3010
     reason: This is singleton proxy resource that intentionally does not have a list by parent operation.
 
-  - where: $..paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/securityAlertPolicies/{securityAlertPolicyName}"]
-    suppress: TrackedResourceListByImmediateParent
+  - where: $..paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/connectionPolicies/{connectionPolicyName}']
+    suppress: R3010
     reason: This is singleton proxy resource that intentionally does not have a list by parent operation.
 
-  - where: $..paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/securityAlertPolicies/{securityAlertPolicyName}"]
-    suppress: TrackedResourceListByImmediateParent
+  - where: $..paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/securityAlertPolicies/{securityAlertPolicyName}']
+    suppress: R3010
     reason: This is singleton proxy resource that intentionally does not have a list by parent operation.
 
-  - where: $..paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}"]
-    suppress: TrackedResourceListByImmediateParent
+  - where: $..paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/securityAlertPolicies/{securityAlertPolicyName}']
+    suppress: R3010
     reason: This is singleton proxy resource that intentionally does not have a list by parent operation.
 
-  - where: $..paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/administrators/{administratorName}"]
-    suppress: TrackedResourceListByImmediateParent
+  - where: $..paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}']
+    suppress: R3010
     reason: This is singleton proxy resource that intentionally does not have a list by parent operation.
 
-  - where: $..paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/auditingSettings/{blobAuditingPolicyName}"]
-    suppress: TrackedResourceListByImmediateParent
+  - where: $..paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/administrators/{administratorName}']
+    suppress: R3010
+    reason: This is singleton proxy resource that intentionally does not have a list by parent operation.
+
+  - where: $..paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/auditingSettings/{blobAuditingPolicyName}']
+    suppress: R3010
     reason: This is singleton proxy resource that intentionally does not have a list by parent operation.
 ```
