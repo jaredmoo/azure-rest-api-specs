@@ -351,7 +351,8 @@
                     "enum":[
                         "Basic",
                         "Standard",
-                        "Premium"
+                        "Premium",
+                        "PremiumRS"
                     ],
                     "x-ms-enum":{
                         "name":"ElasticPoolEdition",
