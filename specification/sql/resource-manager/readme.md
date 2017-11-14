@@ -47,6 +47,7 @@ input-file:
 - Microsoft.Sql/2014-04-01/connectionPolicies.json
 - Microsoft.Sql/2014-04-01/databaseSecurityAlertPolicies.json
 - Microsoft.Sql/2014-04-01/dataMasking.json
+- Microsoft.Sql/2014-04-01/elasticPools.json
 - Microsoft.Sql/2014-04-01/firewallRules.json
 - Microsoft.Sql/2014-04-01/geoBackupPolicies.json
 - Microsoft.Sql/2014-04-01/importExport.json
@@ -90,6 +91,7 @@ input-file:
 - Microsoft.Sql/2014-04-01/connectionPolicies.json
 - Microsoft.Sql/2014-04-01/databaseSecurityAlertPolicies.json
 - Microsoft.Sql/2014-04-01/dataMasking.json
+- Microsoft.Sql/2014-04-01/elasticPools.json
 - Microsoft.Sql/2014-04-01/firewallRules.json
 - Microsoft.Sql/2014-04-01/geoBackupPolicies.json
 - Microsoft.Sql/2014-04-01/importExport.json
@@ -124,6 +126,7 @@ These settings apply only when `--tag=package-2014-04` is specified on the comma
 
 ``` yaml $(tag) == 'package-2014-04'
 input-file:
+- Microsoft.Sql/2014-04-01/elasticPools.json
 - Microsoft.Sql/2014-04-01/firewallRules.json
 - Microsoft.Sql/2014-04-01/importExport.json
 - Microsoft.Sql/2014-04-01/replicationLinks.json
@@ -200,6 +203,7 @@ input-file:
  - ./Microsoft.Sql/2014-04-01/databaseSecurityAlertPolicies.json
  - ./Microsoft.Sql/2014-04-01/dataMasking.json
  - ./Microsoft.Sql/2014-04-01/deprecated.json
+ - ./Microsoft.Sql/2014-04-01/elasticPools.json
  - ./Microsoft.Sql/2014-04-01/firewallRules.json
  - ./Microsoft.Sql/2014-04-01/geoBackupPolicies.json
  - ./Microsoft.Sql/2014-04-01/importExport.json
