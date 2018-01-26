@@ -447,7 +447,7 @@
         }
       }
     },
-    "ArmSku": {
+    "Sku": {
       "description": "An ARM Resource SKU.",
       "type": "object",
       "properties": {
@@ -565,7 +565,7 @@
           "type": "string",
           "readOnly": true,
           "x-ms-enum": {
-            "name": "Status",
+            "name": "DatabaseStatus",
             "modelAsString": true
           }
         },
@@ -726,7 +726,7 @@
       ],
       "properties": {
         "sku": {
-          "$ref": "#/definitions/ArmSku",
+          "$ref": "#/definitions/Sku",
           "description": "The name and tier of the SKU."
         },
         "kind": {
@@ -746,7 +746,7 @@
       "type": "object",
       "properties": {
         "sku": {
-          "$ref": "#/definitions/ArmSku",
+          "$ref": "#/definitions/Sku",
           "description": "The name and tier of the SKU."
         },
         "properties": {
