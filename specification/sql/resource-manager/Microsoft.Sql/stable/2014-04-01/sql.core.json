@@ -614,7 +614,7 @@
           "readOnly": true,
           "type": "array",
           "items": {
-            "$ref": "./databases.json#/definitions/Database"
+            "$ref": "#/definitions/TrackedResource"
           },
           "description": "The list of databases in this pool. Expanded property"
         },
